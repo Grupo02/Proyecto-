@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador.vb" />
+    <Compile Include="Candidato.vb" />
     <Compile Include="Mesa.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -88,6 +89,7 @@
     </Compile>
     <Compile Include="Persona.vb" />
     <Compile Include="RecintoElectoral.vb" />
+    <Compile Include="Votante.vb" />
     <Compile Include="Voto.vb" />
   </ItemGroup>
   <ItemGroup>
