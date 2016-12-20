@@ -6,8 +6,6 @@ Module Module1
     End Sub
 
     Function CrearAdministrador(xmlDoc As XmlDocument, ad As Administrador)
-
-
         Dim admin As XmlElement = xmlDoc.CreateElement("Administrador")
         admin.SetAttribute("ID", ad.Id)
 
