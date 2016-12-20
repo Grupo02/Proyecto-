@@ -163,4 +163,5 @@ Module Module1
             Console.WriteLine("Votante: " & admin & vbNewLine & vbTab & "Nombre " & nodo1 & vbNewLine & vbTab & "Apellido " & nodo2 & vbNewLine & vbTab & "Edad " & nodo3 & vbNewLine & vbTab & "Estado " & nodo4)
         Next
     End Sub
+    Dim menu
 End Module
