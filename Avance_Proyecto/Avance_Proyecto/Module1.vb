@@ -31,7 +31,7 @@ Module Module1
                     Console.WriteLine("VOTANTE")
 
                     Console.Write("Digite su numero de cedula   :")
-                    Votante = Console.ReadLine()
+                    votante = Console.ReadLine()
 
                     Console.WriteLine("..........Bienvenido... :")
 
@@ -321,5 +321,26 @@ Module Module1
             Console.WriteLine("Votante: " & admin & vbNewLine & vbTab & "Nombre " & nodo1 & vbNewLine & vbTab & "Apellido " & nodo2 & vbNewLine & vbTab & "Edad " & nodo3 & vbNewLine & vbTab & "Estado " & nodo4)
         Next
     End Sub
-    Dim menu
+    Sub BuscarVotante(ruta As String, id As Integer)
+        Dim numero = 0
+        Dim documento As XmlDocument = New XmlDocument
+        Dim listaNodo As XmlNodeList
+        Dim nodo As XmlNode
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Votante")
+        For Each nodo In listaNodo
+            Dim admin = nodo.Attributes.GetNamedItem("ID").Value
+            If id = admin Then
+                Dim nodo1 = nodo.ChildNodes(0).InnerText
+                Dim nodo2 = nodo.ChildNodes(1).InnerText
+                Dim nodo3 = nodo.ChildNodes(2).InnerText
+                Dim nodo4 = nodo.ChildNodes(3).InnerText
+                Console.WriteLine("Votante: " & admin & vbNewLine & vbTab & "Nombre " & nodo1 & vbNewLine & vbTab & "Apellido " & nodo2 & vbNewLine & vbTab & "Edad " & nodo3 & vbNewLine & vbTab & "Estado " & nodo4)
+                numero += 1
+            End If
+        Next
+        If numero = 0 Then
+            Console.WriteLine("No existe esa persona")
+        End If
+    End Sub
 End Module
