@@ -340,7 +340,7 @@ Module Module1
             End If
         Next
         If numero = 0 Then
-            Console.WriteLine("No existe esa persona")
+            Console.WriteLine("No existe ese votante")
         End If
     End Sub
 End Module
