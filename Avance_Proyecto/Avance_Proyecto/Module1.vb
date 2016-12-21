@@ -2,12 +2,12 @@
 Module Module1
 
     Sub Main()
-        Dim ruta As String = "D:\docs\Desktop\Personas.xml"
+        Dim ruta As String = ".\xml\Personas.xml"
 
 
         Dim seguirMenu As Boolean = True
         Dim opcion, opcion1, opcion2 As Integer
-        Dim votante, admin, candidato, contraseña As String
+        Dim votante, admin, contraseña As String
         Dim seguir As Boolean = True
         While seguirMenu
 
@@ -34,7 +34,7 @@ Module Module1
                     Console.Write("Digite su numero de cedula   :")
                     votante = Console.ReadLine()
 
-                    Console.WriteLine("..........Bienvenido... :")
+                    Console.WriteLine("..........Bienvenido.......... :")
 
                     Console.Clear()
                     Do

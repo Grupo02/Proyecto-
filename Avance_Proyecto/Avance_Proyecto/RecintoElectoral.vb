@@ -48,4 +48,14 @@
             _mesa = value
         End Set
     End Property
+
+    Private _resultadosDignidades As String
+    Public Property ResultadosDignidades() As String
+        Get
+            Return _resultadosDignidades
+        End Get
+        Set(ByVal value As String)
+            _resultadosDignidades = value
+        End Set
+    End Property
 End Class

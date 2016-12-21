@@ -29,4 +29,14 @@
             _dignidad = value
         End Set
     End Property
+
+    Private _votoRecibido As Integer
+    Public Property VotoRecibido() As Integer
+        Get
+            Return _votoRecibido
+        End Get
+        Set(ByVal value As Integer)
+            _votoRecibido = value
+        End Set
+    End Property
 End Class
