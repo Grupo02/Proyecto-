@@ -19,10 +19,11 @@ Module Module1
                 Console.WriteLine("1.   Inicie sesion como Votante")
                 Console.WriteLine("2.   Inicie sesion como Administrador")
                 Console.WriteLine("3.   Inicie sesion como Candidato")
+                Console.WriteLine("4.   Salir")
                 Console.WriteLine("Opcion:     ")
                 opcion = validarDatosnumerico()
                 Console.WriteLine("------------------------------------------------------------")
-            Loop Until opcion < 4 And opcion > 0
+            Loop Until opcion < 5 And opcion > 0
 
             Select Case opcion
                 Case 1
@@ -31,7 +32,7 @@ Module Module1
                     Console.WriteLine("VOTANTE")
 
                     Console.Write("Digite su numero de cedula   :")
-                    Votante = Console.ReadLine()
+                    votante = Console.ReadLine()
 
                     Console.WriteLine("..........Bienvenido... :")
 
@@ -123,6 +124,11 @@ Module Module1
                             Console.ReadLine()
 
                     End Select
+                Case 4
+                    Console.WriteLine("Gracias por ingresar")
+                    Console.WriteLine("Adios")
+                    Console.ReadLine()
+                    End
 
             End Select
 
