@@ -14,7 +14,7 @@ Public Class Persistencia
     End Sub
     Function CrearAdministrador(xmlDoc As XmlDocument, ad As Administrador)
         Dim admin As XmlElement = xmlDoc.CreateElement("Administrador")
-        'admin.SetAttribute("ID", ad.Id)
+        admin.SetAttribute("ID", ad.Id)
 
         Dim user As XmlElement = xmlDoc.CreateElement("Usuario")
         user.InnerText = ad.UsuarioAdministrador
@@ -25,16 +25,16 @@ Public Class Persistencia
         admin.AppendChild(clave)
 
         Dim nombre As XmlElement = xmlDoc.CreateElement("Nombre")
-        'nombre.InnerText = ad.Nombre
+        nombre.InnerText = ad.Nombre
         admin.AppendChild(nombre)
 
         Dim apellido As XmlElement = xmlDoc.CreateElement("Apellido")
-        'apellido.InnerText = ad.Apellido
+        apellido.InnerText = ad.Apellido
         admin.AppendChild(apellido)
 
         Dim edad As XmlElement = xmlDoc.CreateElement("Edad")
-        'edad.InnerText = ad.Edad
-        'admin.AppendChild(edad)
+        edad.InnerText = ad.Edad
+        admin.AppendChild(edad)
 
 
         Return admin
