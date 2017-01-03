@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<collection shelf="New Arrivals">
+  <Votante ID="966712533">
+    <Nombre>Carlos</Nombre>
+    <Apellido>Mena</Apellido>
+    <Edad>30</Edad>
+    <Estado>False</Estado>
+  </Votante>
+  <Votante ID="987954311">
+    <Nombre>Fatima</Nombre>
+    <Apellido>Guadamud</Apellido>
+    <Edad>19</Edad>
+    <Estado>False</Estado>
+  </Votante>
+  <Votante ID="990876532">
+    <Nombre>Helena</Nombre>
+    <Apellido>Juarez</Apellido>
+    <Edad>21</Edad>
+    <Estado>False</Estado>
+  </Votante>
+  <Votante ID="988776655">
+    <Nombre>David</Nombre>
+    <Apellido>Ruiz</Apellido>
+    <Edad>56</Edad>
+    <Estado>False</Estado>
+  </Votante>
+  <Votante ID="973601263">
+    <Nombre>Karla</Nombre>
+    <Apellido>Lopez</Apellido>
+    <Edad>43</Edad>
+    <Estado>False</Estado>
+  </Votante>
+  <Candidato ID="986540971">
+    <Usuario>CREO</Usuario>
+    <Clave>creo2017</Clave>
+    <Dignidad>Presidente</Dignidad>
+    <Nombre>Guillermo</Nombre>
+    <Apellido>Lasso</Apellido>
+    <Edad>46</Edad>
+  </Candidato>
+  <Candidato ID="981324232">
+    <Usuario>ALIANZA</Usuario>
+    <Clave>alianza2017</Clave>
+    <Dignidad>Presidente</Dignidad>
+    <Nombre>Lennin</Nombre>
+    <Apellido>Moreno</Apellido>
+    <Edad>52</Edad>
+  </Candidato>
+  <Candidato ID="987312167">
+    <Usuario>PSD</Usuario>
+    <Clave>psd2017</Clave>
+    <Dignidad>Presidente</Dignidad>
+    <Nombre>Cinthya</Nombre>
+    <Apellido>Viteri</Apellido>
+    <Edad>51</Edad>
+  </Candidato>
+  <Administrador ID="987543172">
+    <Usuario>adminCollahuazo</Usuario>
+    <Clave>0101</Clave>
+    <Nombre>Joel</Nombre>
+    <Apellido>Collahuazo</Apellido>
+    <Edad>20</Edad>
+  </Administrador>
+  <Administrador ID="987654321">
+    <Usuario>adminFabre</Usuario>
+    <Clave>0102</Clave>
+    <Nombre>Walther</Nombre>
+    <Apellido>Fabre</Apellido>
+    <Edad>20</Edad>
+  </Administrador>
+  <Administrador ID="987678531">
+    <Usuario>adminOrtiz</Usuario>
+    <Clave>0103</Clave>
+    <Nombre>Paola</Nombre>
+    <Apellido>Ortiz</Apellido>
+    <Edad>20</Edad>
+  </Administrador>
+  <Candidato ID="967808724">
+    <Usuario>RafG</Usuario>
+    <Clave>224466</Clave>
+    <Dignidad>Asambleista</Dignidad>
+    <Nombre>Rafael</Nombre>
+    <Apellido>Gonzales</Apellido>
+    <Edad>44</Edad>
+  </Candidato>
+  <Candidato ID="976511243">
+    <Usuario>Typo</Usuario>
+    <Clave>1009</Clave>
+    <Dignidad>Asambleista</Dignidad>
+    <Nombre>Fabiola</Nombre>
+    <Apellido>Puentes</Apellido>
+    <Edad>50</Edad>
+  </Candidato>
+  <Candidato ID="988771125">
+    <Usuario>Lolap</Usuario>
+    <Clave>1237785</Clave>
+    <Dignidad>Asambleista</Dignidad>
+    <Nombre>Lorena</Nombre>
+    <Apellido>Landazuri</Apellido>
+    <Edad>35</Edad>
+  </Candidato>
+  <Candidato ID="987650431">
+    <Usuario>Podr</Usuario>
+    <Clave>37665</Clave>
+    <Dignidad>Consejal</Dignidad>
+    <Nombre>Pablo</Nombre>
+    <Apellido>Dominguez</Apellido>
+    <Edad>31</Edad>
+  </Candidato>
+  <Candidato ID="900456789">
+    <Usuario>Yuma</Usuario>
+    <Clave>678001</Clave>
+    <Dignidad>Consejal</Dignidad>
+    <Nombre>Yamileth</Nombre>
+    <Apellido>Martinez</Apellido>
+    <Edad>60</Edad>
+  </Candidato>
+  <Candidato ID="988989665">
+    <Usuario>Garam</Usuario>
+    <Clave>0988888</Clave>
+    <Dignidad>Consejal</Dignidad>
+    <Nombre>Gabriel</Nombre>
+    <Apellido>Ramos</Apellido>
+    <Edad>31</Edad>
+  </Candidato>
+</collection>
