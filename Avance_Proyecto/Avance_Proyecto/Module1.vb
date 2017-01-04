@@ -2,7 +2,7 @@
 Module Module1
 
     Sub Main()
-        Dim ruta As String = ".\xml\Personas.xml"
+        Dim ruta As String = "D:\docs\Desktop\Persona.xml"
         Dim xml As New Persistencia(ruta)
 
         Dim seguirMenu As Boolean = True
@@ -12,7 +12,7 @@ Module Module1
         While seguirMenu
 
             Do
-                Console.Clear()
+
                 Console.WriteLine("-----------------------------------------------------------")
                 Console.WriteLine("******** Bienvenido al sistema De Voto Electronico ********")
                 Console.WriteLine("Elija una opcion :")
@@ -27,7 +27,7 @@ Module Module1
 
             Select Case opcion
                 Case 1
-                    Console.Clear()
+
                     Console.Write("Digite su usuario    :")
                     admin = Console.ReadLine()
                     Console.Write("Digite su clave     :")
@@ -51,57 +51,61 @@ Module Module1
 
                     Select Case opcion1
                         Case 1
-                            Console.Clear()
+
                             Console.WriteLine("Agrega informacion de dignidad     :")
                             Console.ReadLine()
                             Console.WriteLine("dignidad agregada :")
 
 
                         Case 2
-                            Console.Clear()
+
                             Console.WriteLine("Agrega informacion de candidato     :")
                             Console.ReadLine()
                             Console.WriteLine("Candidato agregado :")
                         Case 3
-                            Console.Clear()
+
                             Console.WriteLine("Los resultados son : ")
                             Console.ReadLine()
                     End Select
 
 
                 Case 2
-                    Console.Clear()
+
                     Console.WriteLine(".........................BIENVENIDO.........................")
                     Console.WriteLine("------------------------------------------------------------")
                     Console.WriteLine("VOTANTE")
 
                     Console.Write("Digite su numero de cedula   :")
                     votante = Console.ReadLine()
+                    Dim estado As Boolean = xml.VerificarVotante(ruta, votante)
+                    If estado = True Then
+                        Console.WriteLine("..........Bienvenido.......... :")
+
+                        Do
+                            Console.WriteLine("Elija una opcion... :")
+                            Console.WriteLine("1.   Voto - Presidencia")
+
+                            Console.Write("Opcion:     ")
+                            opcion2 = validarDatosnumerico()
+                        Loop Until opcion2 > 0 And opcion1 < 2
 
 
-                    Console.WriteLine("..........Bienvenido.......... :")
+                        Select Case opcion2
+                            Case 1
 
-                    Console.Clear()
-                    Do
-                        Console.WriteLine("Elija una opcion... :")
-                        Console.WriteLine("1.   Voto - Presidencia")
-
-                        Console.Write("Opcion:     ")
-                        opcion2 = validarDatosnumerico()
-                    Loop Until opcion2 > 0 And opcion1 < 2
+                                Console.WriteLine("CANDIDATOS A LA PRESIDENCIA")
+                                Console.WriteLine("Elija su candidato: ")
 
 
-                    Select Case opcion2
-                        Case 1
-                            Console.Clear()
-                            Console.WriteLine("CANDIDATOS A LA PRESIDENCIA")
-                            Console.WriteLine("Elija su candidato: ")
+                        End Select
+                    Else
+                        Console.WriteLine("No existe ese votante")
+                    End If
 
 
-                    End Select
 
                 Case 3
-                    Console.Clear()
+
                     Console.Write("Digite su usuario    :")
                     admin = Console.ReadLine()
                     Console.Write("Digite su clave     :")
@@ -144,7 +148,6 @@ Module Module1
             Dim seguirOp As Integer
             Do
                 Console.WriteLine("1.- Salir")
-                Console.WriteLine("2.- Regresar a menu principal")
                 seguirOp = validarDatosnumerico()
             Loop Until seguirOp > 0 And seguirOp < 2
             If seguirOp <> 1 Then

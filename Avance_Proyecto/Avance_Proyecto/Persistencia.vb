@@ -356,5 +356,20 @@ Public Class Persistencia
             End If
         Next
     End Sub
+    Function VerificarVotoVotante(ruta As String, cedula As Integer)
+        Dim estado = False
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Votante")
+        For Each nodo In listaNodo
+            Dim admin = nodo.Attributes.GetNamedItem("ID").Value
+
+            If cedula = admin Then
+                If nodo.ChildNodes.Item(3).InnerText = "False" Then
+                    estado = True
+                End If
+            End If
+        Next
+        Return estado
+    End Function
 End Class
 
