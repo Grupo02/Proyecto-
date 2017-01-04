@@ -289,22 +289,25 @@ Public Class Persistencia
                     numero = numero + 1
                     nodo.ChildNodes.Item(7).InnerText = CStr(numero)
                     Console.WriteLine("Fin" & numero)
+                    documento.Save(ruta)
                 End If
             ElseIf tipo = 2 Then
                 If nodo.ChildNodes.Item(2).InnerText = "Asambleista" And nodo.ChildNodes.Item(6).InnerText = CStr(lista) Then
                     numero = CInt(nodo.ChildNodes.Item(7).InnerText)
                     numero += 1
                     nodo.ChildNodes.Item(7).InnerText = CStr(numero)
+                    documento.Save(ruta)
                 End If
             Else
                 If nodo.ChildNodes.Item(2).InnerText = "Consejal" And nodo.ChildNodes.Item(6).InnerText = CStr(lista) Then
                     numero = CInt(nodo.ChildNodes.Item(7).InnerText)
                     numero += 1
                     nodo.ChildNodes.Item(7).InnerText = CStr(numero)
+                    documento.Save(ruta)
                 End If
             End If
         Next
-        documento.Save(ruta)
+
     End Sub
 
 
