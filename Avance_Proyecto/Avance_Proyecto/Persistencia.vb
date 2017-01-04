@@ -1,6 +1,10 @@
 ﻿Imports System.Xml
+
 Public Class Persistencia
     Private _ruta As String
+    Dim documento As XmlDocument = New XmlDocument
+    Dim listaNodo As XmlNodeList
+    Dim nodo As XmlNode
     Public Property Ruta() As String
         Get
             Return _ruta
@@ -39,7 +43,6 @@ Public Class Persistencia
 
         Return admin
     End Function
-
     Function CrearCandidato(xmlDoc As XmlDocument, cand As Candidato)
 
 
@@ -70,6 +73,9 @@ Public Class Persistencia
         edad.InnerText = cand.Edad
         candidato.AppendChild(edad)
 
+        Dim votos As XmlElement = xmlDoc.CreateElement("Votos")
+        votos.InnerText = cand.Votos
+        candidato.AppendChild(votos)
 
         Return candidato
     End Function
@@ -97,6 +103,7 @@ Public Class Persistencia
 
         Return votante
     End Function
+
     Public Sub AgregarAdministrador(ruta As String, admin As Administrador)
         Dim xmlDoc As New XmlDocument()
         xmlDoc.Load(ruta)
@@ -118,10 +125,8 @@ Public Class Persistencia
         collection.AppendChild(CrearVotante(xmlDoc, voto))
         xmlDoc.Save(ruta)
     End Sub
+
     Sub MostrarAdministradores(ruta As String)
-        Dim documento As XmlDocument = New XmlDocument
-        Dim listaNodo As XmlNodeList
-        Dim nodo As XmlNode
         documento.Load(ruta)
         listaNodo = documento.SelectNodes("collection/Administrador")
         For Each nodo In listaNodo
@@ -136,9 +141,6 @@ Public Class Persistencia
         Next
     End Sub
     Sub MostrarCandidatos(ruta As String)
-        Dim documento As XmlDocument = New XmlDocument
-        Dim listaNodo As XmlNodeList
-        Dim nodo As XmlNode
         documento.Load(ruta)
         listaNodo = documento.SelectNodes("collection/Candidato")
         For Each nodo In listaNodo
@@ -149,14 +151,12 @@ Public Class Persistencia
             Dim nodo4 = nodo.ChildNodes(3).InnerText
             Dim nodo5 = nodo.ChildNodes(4).InnerText
             Dim nodo6 = nodo.ChildNodes(5).InnerText
+            Dim nodo7 = nodo.ChildNodes(6).InnerText
 
-            Console.WriteLine("Candidato: " & admin & vbNewLine & vbTab & "Usuario " & nodo1 & vbNewLine & vbTab & "Clave " & nodo2 & vbNewLine & vbTab & "Dignidad " & nodo3 & vbNewLine & vbTab & "Nombre " & nodo4 & vbNewLine & vbTab & "Apellido " & nodo5 & vbNewLine & vbTab & "Edad " & nodo6)
+            Console.WriteLine("Candidato: " & admin & vbNewLine & vbTab & "Usuario " & nodo1 & vbNewLine & vbTab & "Clave " & nodo2 & vbNewLine & vbTab & "Dignidad " & nodo3 & vbNewLine & vbTab & "Nombre " & nodo4 & vbNewLine & vbTab & "Apellido " & nodo5 & vbNewLine & vbTab & "Edad " & nodo6 & vbNewLine & vbTab & "Votos " & nodo7)
         Next
     End Sub
     Sub MostrarVotantes(ruta As String)
-        Dim documento As XmlDocument = New XmlDocument
-        Dim listaNodo As XmlNodeList
-        Dim nodo As XmlNode
         documento.Load(ruta)
         listaNodo = documento.SelectNodes("collection/Votante")
         For Each nodo In listaNodo
@@ -171,10 +171,8 @@ Public Class Persistencia
     End Sub
 
     Sub BuscarVotante(ruta As String, id As Integer)
+        Console.Clear()
         Dim numero = 0
-        Dim documento As XmlDocument = New XmlDocument
-        Dim listaNodo As XmlNodeList
-        Dim nodo As XmlNode
         documento.Load(ruta)
         listaNodo = documento.SelectNodes("collection/Votante")
         For Each nodo In listaNodo
@@ -190,28 +188,59 @@ Public Class Persistencia
         Next
         If numero = 0 Then
             Console.WriteLine("No existe esa persona")
+            Console.ReadLine()
         End If
     End Sub
-    Sub EliminarVotante(ruta As String, id As Integer)
-        Dim numero = 0
-        Dim documento As XmlDocument = New XmlDocument
-        Dim listaNodo As XmlNodeList
-        Dim nodo As XmlNode
+    Sub Votar(ruta As String, id As Integer)
         documento.Load(ruta)
         listaNodo = documento.SelectNodes("collection/Votante")
-        Dim iterator As Integer
         For Each nodo In listaNodo
-            iterator += 1
             Dim admin = nodo.Attributes.GetNamedItem("ID").Value
             If id = admin Then
-                Dim temporal = documento.GetElementsByTagName("Votante").Item(iterator)
-                temporal.ParentNode.RemoveChild(temporal)
-                Console.WriteLine(iterator & "---" & temporal.Name)
-                numero += 1
+                nodo.ChildNodes.Item(3).InnerText = "True"
+                MsgBox(nodo.ChildNodes.Item(3).Name)
+                Console.WriteLine("Voto enviado")
+                documento.Save(ruta)
             End If
         Next
-        If numero = 0 Then
-            Console.WriteLine("No existe esa persona")
+    End Sub
+    Sub EliminarVotante(ruta As String, id As Integer)
+        Dim num = 0
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Votante")
+        For Each nodo In listaNodo
+            Dim admin = nodo.Attributes.GetNamedItem("ID").Value
+            If id = admin Then
+                nodo.ParentNode.RemoveChild(nodo)
+                documento.Save(ruta)
+                num += 1
+                Console.WriteLine("Votante Eliminado")
+                Console.ReadLine()
+            End If
+        Next
+        If num = 0 Then
+            Console.WriteLine("No existe ese votante")
+            Console.ReadLine()
+        End If
+    End Sub
+    Sub EliminarCandidato(ruta As String, id As Integer)
+        Dim num = 0
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Candidato")
+        For Each nodo In listaNodo
+            Dim admin = nodo.Attributes.GetNamedItem("ID").Value
+            If id = admin Then
+                nodo.ParentNode.RemoveChild(nodo)
+                documento.Save(ruta)
+                num += 1
+                Console.WriteLine("Candidato Eliminado")
+                Console.ReadLine()
+            End If
+        Next
+        If num = 0 Then
+            Console.WriteLine("No existe ese votante")
+            Console.ReadLine()
         End If
     End Sub
 End Class
+

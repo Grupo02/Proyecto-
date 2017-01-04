@@ -31,12 +31,26 @@
     End Property
 
     Private _votoRecibido As Integer
-    Public Property VotoRecibido() As Integer
+    Private _votos As Integer
+    Public Property Votos() As Integer
         Get
-            Return _votoRecibido
+            Return _votos
         End Get
         Set(ByVal value As Integer)
-            _votoRecibido = value
+            _votos = value
         End Set
     End Property
+    Public Sub New(persona As Persona, user As String, clave As String, dignidad As String)
+        Me.Id = persona.Id
+        Me.Nombre = persona.Nombre
+        Me.Apellido = persona.Apellido
+        Me.Edad = persona.Edad
+        Me.UsuarioCandidato = user
+        Me.ClaveCandidato = clave
+        Me.Dignidad = dignidad
+        Me.Votos = 0
+    End Sub
+    Public Overrides Function ToString() As String
+        Return "Persona nro: " & Me.Id & ": " & Me.Nombre & " " & Me.Apellido & " tiene " & Me.Edad & " años" & vbTab & " User " & Me.UsuarioCandidato & "-Clave" & Me.ClaveCandidato & "-Dignidad" & Me.Dignidad & " tiene " & Me.Votos & " votos"
+    End Function
 End Class

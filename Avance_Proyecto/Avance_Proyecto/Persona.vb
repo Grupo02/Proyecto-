@@ -39,4 +39,14 @@
             _edad = value
         End Set
     End Property
+
+    Public Sub New(id As Integer, nombre As String, apellido As String, edad As Integer)
+        Me.Id = id
+        Me.Nombre = nombre
+        Me.Apellido = apellido
+        Me.Edad = edad
+    End Sub
+
+    Public Sub New()
+    End Sub
 End Class
