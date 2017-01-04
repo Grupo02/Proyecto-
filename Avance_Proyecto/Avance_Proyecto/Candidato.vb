@@ -57,6 +57,7 @@
         Me.Dignidad = dignidad
         Me.Lista = lista
         Me.Votos = 0
+
     End Sub
     Public Overrides Function ToString() As String
         Return "Persona nro: " & Me.Id & ": " & Me.Nombre & " " & Me.Apellido & " tiene " & Me.Edad & " años" & vbTab & " User " & Me.UsuarioCandidato & "-Clave" & Me.ClaveCandidato & "-Dignidad" & Me.Dignidad & "Lista" & Me.Lista & " tiene " & Me.Votos & " votos"
