@@ -18,7 +18,7 @@ Public Class Persistencia
     End Sub
     Function CrearAdministrador(xmlDoc As XmlDocument, ad As Administrador)
         Dim admin As XmlElement = xmlDoc.CreateElement("Administrador")
-        'admin.SetAttribute("ID", ad.Id)
+        admin.SetAttribute("ID", ad.Id)
 
         Dim user As XmlElement = xmlDoc.CreateElement("Usuario")
         user.InnerText = ad.UsuarioAdministrador
@@ -29,15 +29,15 @@ Public Class Persistencia
         admin.AppendChild(clave)
 
         Dim nombre As XmlElement = xmlDoc.CreateElement("Nombre")
-        'nombre.InnerText = ad.Nombre
+        nombre.InnerText = ad.Nombre
         admin.AppendChild(nombre)
 
         Dim apellido As XmlElement = xmlDoc.CreateElement("Apellido")
-        'apellido.InnerText = ad.Apellido
+        apellido.InnerText = ad.Apellido
         admin.AppendChild(apellido)
 
         Dim edad As XmlElement = xmlDoc.CreateElement("Edad")
-        'edad.InnerText = ad.Edad
+        edad.InnerText = ad.Edad
         admin.AppendChild(edad)
 
 
@@ -72,6 +72,10 @@ Public Class Persistencia
         Dim edad As XmlElement = xmlDoc.CreateElement("Edad")
         edad.InnerText = cand.Edad
         candidato.AppendChild(edad)
+
+        Dim lista As XmlElement = xmlDoc.CreateElement("Lista")
+        lista.InnerText = cand.Lista
+        candidato.AppendChild(lista)
 
         Dim votos As XmlElement = xmlDoc.CreateElement("Votos")
         votos.InnerText = cand.Votos
@@ -126,6 +130,45 @@ Public Class Persistencia
         xmlDoc.Save(ruta)
     End Sub
 
+    Function VerificarAdministrador(ruta As String, user As String, pass As String)
+        Dim estado = False
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Administrador")
+        For Each nodo In listaNodo
+            If user = nodo.ChildNodes.Item(0).InnerText And pass = nodo.ChildNodes.Item(1).InnerText Then
+                estado = True
+            End If
+        Next
+        Return estado
+    End Function
+
+    Function VerificarCandidato(ruta As String, user As String, pass As String)
+        Dim estado = False
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Candidato")
+        For Each nodo In listaNodo
+            If user = nodo.ChildNodes.Item(0).InnerText And pass = nodo.ChildNodes.Item(1).InnerText Then
+                estado = True
+            End If
+        Next
+        Return estado
+    End Function
+
+    Function VerificarVotante(ruta As String, cedula As Integer)
+        Dim estado = False
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Votante")
+        For Each nodo In listaNodo
+            Dim admin = nodo.Attributes.GetNamedItem("ID").Value
+
+            If cedula = admin Then
+                estado = True
+
+            End If
+        Next
+        Return estado
+    End Function
+
     Sub MostrarAdministradores(ruta As String)
         documento.Load(ruta)
         listaNodo = documento.SelectNodes("collection/Administrador")
@@ -152,8 +195,9 @@ Public Class Persistencia
             Dim nodo5 = nodo.ChildNodes(4).InnerText
             Dim nodo6 = nodo.ChildNodes(5).InnerText
             Dim nodo7 = nodo.ChildNodes(6).InnerText
+            Dim nodo8 = nodo.ChildNodes(7).InnerText
 
-            Console.WriteLine("Candidato: " & admin & vbNewLine & vbTab & "Usuario " & nodo1 & vbNewLine & vbTab & "Clave " & nodo2 & vbNewLine & vbTab & "Dignidad " & nodo3 & vbNewLine & vbTab & "Nombre " & nodo4 & vbNewLine & vbTab & "Apellido " & nodo5 & vbNewLine & vbTab & "Edad " & nodo6 & vbNewLine & vbTab & "Votos " & nodo7)
+            Console.WriteLine("Candidato: " & admin & vbNewLine & vbTab & "Usuario " & nodo1 & vbNewLine & vbTab & "Clave " & nodo2 & vbNewLine & vbTab & "Dignidad " & nodo3 & vbNewLine & vbTab & "Nombre " & nodo4 & vbNewLine & vbTab & "Apellido " & nodo5 & vbNewLine & vbTab & "Edad " & nodo6 & vbNewLine & vbTab & "Lista " & nodo7 & vbNewLine & vbTab & "Votos " & nodo8)
         Next
     End Sub
     Sub MostrarVotantes(ruta As String)
@@ -167,6 +211,34 @@ Public Class Persistencia
             Dim nodo4 = nodo.ChildNodes(3).InnerText
 
             Console.WriteLine("Votante: " & admin & vbNewLine & vbTab & "Nombre " & nodo1 & vbNewLine & vbTab & "Apellido " & nodo2 & vbNewLine & vbTab & "Edad " & nodo3 & vbNewLine & vbTab & "Estado " & nodo4)
+        Next
+    End Sub
+
+    Sub ListarCandidatos(ruta As String, tipo As Integer)
+        Dim nome
+        Dim ape
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Candidato")
+        For Each nodo In listaNodo
+            If tipo = 1 Then
+                If nodo.ChildNodes.Item(2).InnerText = "Presidente" Then
+                    nome = nodo.ChildNodes(3).InnerText
+                    ape = nodo.ChildNodes(4).InnerText
+                    Console.WriteLine(nodo.ChildNodes(6).InnerText & ": " & nome & " " & ape)
+                End If
+            ElseIf tipo = 2 Then
+                If nodo.ChildNodes.Item(2).InnerText = "Asambleista" Then
+                    nome = nodo.ChildNodes(3).InnerText
+                    ape = nodo.ChildNodes(4).InnerText
+                    Console.WriteLine(nodo.ChildNodes(6).InnerText & ": " & nome & " " & ape)
+                End If
+            Else
+                If nodo.ChildNodes.Item(2).InnerText = "Consejal" Then
+                    nome = nodo.ChildNodes(3).InnerText
+                    ape = nodo.ChildNodes(4).InnerText
+                    Console.WriteLine(nodo.ChildNodes(6).InnerText & ": " & nome & " " & ape)
+                End If
+            End If
         Next
     End Sub
 
@@ -198,12 +270,44 @@ Public Class Persistencia
             Dim admin = nodo.Attributes.GetNamedItem("ID").Value
             If id = admin Then
                 nodo.ChildNodes.Item(3).InnerText = "True"
-                MsgBox(nodo.ChildNodes.Item(3).Name)
                 Console.WriteLine("Voto enviado")
                 documento.Save(ruta)
             End If
         Next
     End Sub
+
+    Sub AumentarVotoCandidato(ruta As String, tipo As Integer, lista As Integer)
+        Dim numero
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Candidato")
+
+        For Each nodo In listaNodo
+            If tipo = 1 Then
+                Console.WriteLine("Inicio")
+                If nodo.ChildNodes.Item(2).InnerText = "Presidente" And nodo.ChildNodes.Item(6).InnerText = CStr(lista) Then
+                    numero = CInt(nodo.ChildNodes.Item(7).InnerText)
+                    numero = numero + 1
+                    nodo.ChildNodes.Item(7).InnerText = CStr(numero)
+                    Console.WriteLine("Fin" & numero)
+                End If
+            ElseIf tipo = 2 Then
+                If nodo.ChildNodes.Item(2).InnerText = "Asambleista" And nodo.ChildNodes.Item(6).InnerText = CStr(lista) Then
+                    numero = CInt(nodo.ChildNodes.Item(7).InnerText)
+                    numero += 1
+                    nodo.ChildNodes.Item(7).InnerText = CStr(numero)
+                End If
+            Else
+                If nodo.ChildNodes.Item(2).InnerText = "Consejal" And nodo.ChildNodes.Item(6).InnerText = CStr(lista) Then
+                    numero = CInt(nodo.ChildNodes.Item(7).InnerText)
+                    numero += 1
+                    nodo.ChildNodes.Item(7).InnerText = CStr(numero)
+                End If
+            End If
+        Next
+        documento.Save(ruta)
+    End Sub
+
+
     Sub EliminarVotante(ruta As String, id As Integer)
         Dim num = 0
         documento.Load(ruta)
