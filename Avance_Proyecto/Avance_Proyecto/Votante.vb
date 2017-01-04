@@ -20,5 +20,14 @@
             _nroMesa = value
         End Set
     End Property
-
+    Public Sub New(persona As Persona, estado As Boolean)
+        Me.Id = persona.Id
+        Me.Nombre = persona.Nombre
+        Me.Apellido = persona.Apellido
+        Me.Edad = persona.Edad
+        Me.Estado = estado
+    End Sub
+    Public Overrides Function ToString() As String
+        Return "Persona nro: " & Me.Id & ": " & Me.Nombre & " " & Me.Apellido & " tiene " & Me.Edad & " años" & vbTab & " Estado " & Me.Estado
+    End Function
 End Class
