@@ -346,5 +346,15 @@ Public Class Persistencia
             Console.ReadLine()
         End If
     End Sub
+
+    Sub MostrarAvancesCandidato(ruta As String, user As String, pass As String)
+        documento.Load(ruta)
+        listaNodo = documento.SelectNodes("collection/Candidato")
+        For Each nodo In listaNodo
+            If user = nodo.ChildNodes.Item(0).InnerText And pass = nodo.ChildNodes.Item(1).InnerText Then
+                Console.WriteLine("Saludos " & nodo.ChildNodes.Item(3).InnerText & " actualmente cuentas con " & nodo.ChildNodes.Item(7).InnerText & " votos")
+            End If
+        Next
+    End Sub
 End Class
 

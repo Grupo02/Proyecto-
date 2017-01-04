@@ -16,7 +16,7 @@ Module Module1
                 Console.WriteLine("-----------------------------------------------------------")
                 Console.WriteLine("******** Bienvenido al sistema De Voto Electronico ********")
                 Console.WriteLine("Elija una opcion :")
-                Console.WriteLine("1.   Iniciar Usuario")
+                Console.WriteLine("1.   Iniciar Administrador")
                 Console.WriteLine("2.   Iniciar Votante")
                 Console.WriteLine("3.   Iniciar Candidato")
                 Console.WriteLine("4.   Salir")
