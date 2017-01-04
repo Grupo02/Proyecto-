@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <collection shelf="New Arrivals">
-  <Votante ID="966712533">
-    <Nombre>Carlos</Nombre>
-    <Apellido>Mena</Apellido>
+  <Votante ID="0123456789">
+    <Nombre>Jose</Nombre>
+    <Apellido>Perez</Apellido>
     <Edad>30</Edad>
     <Estado>False</Estado>
   </Votante>
@@ -33,7 +33,7 @@
   <Candidato ID="986540971">
     <Usuario>CREO</Usuario>
     <Clave>creo2017</Clave>
-    <Dignidad>CREO</Dignidad>
+    <Dignidad>Presidente</Dignidad>
     <Nombre>Guillermo</Nombre>
     <Apellido>Lasso</Apellido>
     <Edad>46</Edad>
@@ -41,17 +41,17 @@
   <Candidato ID="981324232">
     <Usuario>ALIANZA</Usuario>
     <Clave>alianza2017</Clave>
-    <Dignidad>ALIANZA PAIS</Dignidad>
+    <Dignidad>Presidente</Dignidad>
     <Nombre>Lennin</Nombre>
     <Apellido>Moreno</Apellido>
     <Edad>52</Edad>
   </Candidato>
   <Candidato ID="987312167">
-    <Usuario>PSD</Usuario>
-    <Clave>psd2017</Clave>
-    <Dignidad>PARTIDO SOCIAL CRISTIANO</Dignidad>
-    <Nombre>Cinthya</Nombre>
-    <Apellido>Viteri</Apellido>
+    <Usuario>asambleistaAlianza</Usuario>
+    <Clave>alianza2017</Clave>
+    <Dignidad>Asambleista</Dignidad>
+    <Nombre>Pepe</Nombre>
+    <Apellido>Lopez</Apellido>
     <Edad>51</Edad>
   </Candidato>
   <Administrador ID="987543172">
