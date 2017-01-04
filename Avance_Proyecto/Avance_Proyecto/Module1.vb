@@ -3,7 +3,7 @@ Imports System.Xml
 Module Module1
 
     Sub Main()
-        Dim ruta As String = "C:\Users\JOEL COLLAHUAZO\Downloads\Persona.xml"
+        Dim ruta As String = "C:\Users\ESTUDIANTE\Source\Repos\Proyecto-\Avance_Proyecto\Avance_Proyecto\xml\Persona.xml"
         Dim xml As New Persistencia(ruta)
 
         Dim seguirMenu As Boolean = True
@@ -47,8 +47,8 @@ Module Module1
 
                             Console.WriteLine("Elja una accion que desee realizar como administrador :")
                             Console.WriteLine("1.   Agregar Dignidad")
-                            Console.WriteLine("2.   Agregar votante")
-                            Console.WriteLine("3.   Mostrar Dignidades")
+                            Console.WriteLine("2.   Agregar Candidato") 'votante
+                            Console.WriteLine("3.   Mostrar Candidato")
                             Console.WriteLine("4.   Mostrar Votantes")
 
                             Console.Write("Opcion #:")
