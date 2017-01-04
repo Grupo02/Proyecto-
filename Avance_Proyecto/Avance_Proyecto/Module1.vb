@@ -1,13 +1,14 @@
-﻿Imports System.Xml
+﻿
+Imports System.Xml
 Module Module1
 
     Sub Main()
-        Dim ruta As String = "D:\docs\Desktop\Persona.xml"
+        Dim ruta As String = "C:\Users\JOEL COLLAHUAZO\Downloads\Persona.xml"
         Dim xml As New Persistencia(ruta)
 
         Dim seguirMenu As Boolean = True
         Dim opcion, opcion1, opcion2, votante As Integer
-        Dim admin, contraseña As String
+        Dim admin, contraseña, extra As String
         Dim seguir As Boolean = True
         While seguirMenu
 
@@ -32,41 +33,67 @@ Module Module1
                     admin = Console.ReadLine()
                     Console.Write("Digite su clave     :")
                     contraseña = Console.ReadLine()
+                    Dim estado As Boolean = xml.VerificarAdministrador(ruta, admin, contraseña)
+                    If estado = True Then
+                        Console.WriteLine(".........................BIENVENIDO.........................")
+                        Console.WriteLine("------------------------------------------------------------")
+                        Console.WriteLine("ADMINISTRADOR")
+
+                        Do
+
+                            Console.WriteLine("Elja una accion que desee realizar como administrador :")
+                            Console.WriteLine("1.   Agregar Dignidad")
+                            Console.WriteLine("2.   Agregar votante")
+                            Console.WriteLine("3.   Mostrar Dignidades")
+                            Console.WriteLine("4.   Mostrar Votantes")
+
+                            Console.Write("Opcion #:")
+                            opcion1 = validarDatosnumerico()
+                        Loop Until opcion1 > 0 And opcion1 < 4
+
+                        Select Case opcion1
+                            Case 1
+
+                                Console.WriteLine("Agrega informacion de dignidad     :")
+                                Console.WriteLine("Ingrese su usuario Candidato")
+                                Dim user As String = Console.ReadLine
+                                Console.WriteLine("Ingrese su contraseña de Candidato")
+                                Dim pass As String = Console.ReadLine
+                                Console.WriteLine("Ingrese el nombre de su dignidad")
+                                Dim dignidad As String = Console.ReadLine
+                                Console.WriteLine("Ingrese el nro de lista")
+                                Dim lista As Integer = Console.ReadLine
+                                Dim cand As New Candidato(AgregarDatos, user, pass, dignidad, lista)
+                                xml.AgregarCandidato(ruta, cand)
+                                Console.ReadLine()
+                                Console.WriteLine("dignidad agregada :")
 
 
-                    Console.WriteLine(".........................BIENVENIDO.........................")
-                    Console.WriteLine("------------------------------------------------------------")
-                    Console.WriteLine("ADMINISTRADOR")
+                            Case 2
 
-                    Do
+                                Console.WriteLine("Agrega informacion de votante     :")
+                                Dim voto As New Votante(AgregarDatos, False)
+                                xml.AgregarVotante(ruta, voto)
+                                Console.ReadLine()
+                                Console.WriteLine("Candidato agregado :")
+                            Case 3
 
-                        Console.WriteLine("Elja una accion que desee realizar como administrador :")
-                        Console.WriteLine("1.   Agregar Dignidad")
-                        Console.WriteLine("2.   Agregar Candidato")
-                        Console.WriteLine("3.   Mostrar resultados")
+                                Console.WriteLine("Los resultados son : ")
+                                xml.MostrarCandidatos(ruta)
+                                Console.ReadLine()
+                            Case 4
 
-                        Console.Write("Opcion #:")
-                        opcion1 = validarDatosnumerico()
-                    Loop Until opcion1 > 0 And opcion1 < 4
-
-                    Select Case opcion1
-                        Case 1
-
-                            Console.WriteLine("Agrega informacion de dignidad     :")
-                            Console.ReadLine()
-                            Console.WriteLine("dignidad agregada :")
+                                Console.WriteLine("Los resultados son : ")
+                                xml.MostrarVotantes(ruta)
+                                Console.ReadLine()
+                        End Select
+                    Else
+                        Console.WriteLine("Usted no es un administrador")
+                    End If
 
 
-                        Case 2
 
-                            Console.WriteLine("Agrega informacion de candidato     :")
-                            Console.ReadLine()
-                            Console.WriteLine("Candidato agregado :")
-                        Case 3
 
-                            Console.WriteLine("Los resultados son : ")
-                            Console.ReadLine()
-                    End Select
 
 
                 Case 2
@@ -77,9 +104,12 @@ Module Module1
 
                     Console.Write("Digite su numero de cedula   :")
                     votante = Console.ReadLine()
-                    Console.WriteLine("..........Bienvenido.......... :")
-
-                    Do
+                    Dim estado As Boolean = xml.VerificarVotante(ruta, votante)
+                    Dim estado2 As Boolean = xml.VerificarVotoVotante(ruta, votante)
+                    If estado = True Then
+                        Console.WriteLine("..........Bienvenido.......... :")
+                        If estado2 = True Then
+                            Do
                                 Console.WriteLine("Elija una opcion... :")
                                 Console.WriteLine("1.   Votar")
 
@@ -88,11 +118,43 @@ Module Module1
                             Loop Until opcion2 > 0 And opcion1 < 2
 
 
-                    Select Case opcion2
-                        Case 1
+                            Select Case opcion2
+                                Case 1
+                                    Console.WriteLine()
+                                    Console.WriteLine("CANDIDATOS A LA PRESIDENCIA")
+                                    xml.ListarCandidatos(ruta, 1)
 
+                                    Console.WriteLine("Elija su candidato: ")
+                                    extra = Console.ReadLine()
+                                    xml.AumentarVotoCandidato(ruta, 1, extra)
 
-                    End Select
+                                    Console.WriteLine()
+                                    Console.WriteLine("CANDIDATOS A LA ASAMBLEA")
+                                    xml.ListarCandidatos(ruta, 2)
+
+                                    Console.WriteLine("Elija su candidato: ")
+                                    extra = Console.ReadLine()
+                                    xml.AumentarVotoCandidato(ruta, 2, extra)
+
+                                    Console.WriteLine()
+                                    Console.WriteLine("CANDIDATOS AL CONSEJO")
+                                    xml.ListarCandidatos(ruta, 3)
+
+                                    Console.WriteLine("Elija su candidato: ")
+                                    extra = Console.ReadLine()
+                                    xml.AumentarVotoCandidato(ruta, 3, extra)
+
+                                    Console.WriteLine("Usted ha votado")
+                                    xml.Votar(ruta, votante)
+
+                            End Select
+                        ElseIf estado2 = False Then
+                            Console.WriteLine("Usted ya voto")
+                        End If
+
+                    Else
+                        Console.WriteLine("No existe ese votante")
+                    End If
 
 
 
@@ -102,8 +164,10 @@ Module Module1
                     admin = Console.ReadLine()
                     Console.Write("Digite su clave     :")
                     contraseña = Console.ReadLine()
-                    Console.WriteLine(".........................BIENVENIDO.........................")
-                    Console.WriteLine("------------------------------------------------------------")
+                    Dim estado As Boolean = xml.VerificarCandidato(ruta, admin, contraseña)
+                    If estado = True Then
+                        Console.WriteLine(".........................BIENVENIDO.........................")
+                        Console.WriteLine("------------------------------------------------------------")
                         Console.WriteLine("CANDIDATO")
 
                         Do
@@ -119,6 +183,7 @@ Module Module1
                         Select Case opcion1
                             Case 1
                                 Console.WriteLine("Los resultados son : ")
+                                xml.MostrarAvancesCandidato(ruta, admin, contraseña)
                                 Console.ReadLine()
 
                             Case 2
@@ -126,6 +191,9 @@ Module Module1
                                 Console.ReadLine()
                                 End
                         End Select
+                    Else
+                        Console.WriteLine("Usted no es un candidato")
+                    End If
 
 
                 Case 4
@@ -170,6 +238,19 @@ Module Module1
         numero = aux
         Return numero
     End Function
+    Function AgregarDatos()
+        Console.WriteLine("Ingrese la cedula")
+        Dim id As Integer = Console.ReadLine
 
+        Console.WriteLine("Ingrese su nombre")
+        Dim nombre As String = Console.ReadLine
+
+        Console.WriteLine("Ingrese su apellido")
+        Dim apellido As String = Console.ReadLine
+
+        Console.WriteLine("Ingrese su edad")
+        Dim edad As Integer = Console.ReadLine
+        Dim personita As New Persona(id, nombre, apellido, edad)
+        Return personita
+    End Function
 End Module
-
