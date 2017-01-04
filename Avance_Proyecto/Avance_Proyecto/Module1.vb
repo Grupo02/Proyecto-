@@ -27,7 +27,11 @@ Module Module1
             Loop Until opcion < 5 And opcion > 0
 
             Select Case opcion
+
                 Case 1
+                    Dim existe
+
+                    Dim administrador As Administrador
 
                     Console.Write("Digite su usuario    :")
                     admin = Console.ReadLine()
