@@ -18,11 +18,12 @@ Module Module1
                 Console.WriteLine("Elija una opcion :")
                 Console.WriteLine("1.   Iniciar Usuario")
                 Console.WriteLine("2.   Iniciar Votante")
-                Console.WriteLine("3.   Salir")
+                Console.WriteLine("3.   Iniciar Candidato")
+                Console.WriteLine("4.   Salir")
                 Console.WriteLine("Opcion:     ")
                 opcion = validarDatosnumerico()
                 Console.WriteLine("------------------------------------------------------------")
-            Loop Until opcion < 4 And opcion > 0
+            Loop Until opcion < 5 And opcion > 0
 
             Select Case opcion
                 Case 1
@@ -95,8 +96,40 @@ Module Module1
 
                     End Select
 
-
                 Case 3
+
+                    Console.Write("Digite su usuario    :")
+                    admin = Console.ReadLine()
+                    Console.Write("Digite su clave     :")
+                    contraseña = Console.ReadLine()
+
+
+                    Console.WriteLine(".........................BIENVENIDO.........................")
+                    Console.WriteLine("------------------------------------------------------------")
+                    Console.WriteLine("CANDIDATO")
+
+                    Do
+
+                        Console.WriteLine("Elja una accion que desee realizar como candidato :")
+                        Console.WriteLine("1.   Mostrar resultados")
+                        Console.WriteLine("2.   Salir")
+
+                        Console.Write("Opcion #:")
+                        opcion1 = validarDatosnumerico()
+                    Loop Until opcion1 > 0 And opcion1 < 3
+
+                    Select Case opcion1
+                        Case 1
+                            Console.WriteLine("Los resultados son : ")
+                            Console.ReadLine()
+
+                        Case 2
+                            Console.WriteLine("Adios")
+                            Console.ReadLine()
+                            End
+                    End Select
+
+                Case 4
                     Console.WriteLine("Gracias por ingresar")
                     Console.WriteLine("Adios")
                     Console.ReadLine()
