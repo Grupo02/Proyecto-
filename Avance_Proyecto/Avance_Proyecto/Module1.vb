@@ -182,11 +182,11 @@ Module Module1
 
                             Console.Write("Opcion #:")
                             opcion1 = validarDatosnumerico()
-                        Loop Until opcion1 > 0 And opcion1 < 3
+                        Loop Until opcion1 > 0 And opcion1 < 4
 
                         Select Case opcion1
                             Case 1
-                                Console.WriteLine("Los resultados son : ")
+                                Console.WriteLine("Los resultados son  : ")
                                 xml.MostrarAvancesCandidato(ruta, admin, contraseña)
                                 Console.ReadLine()
 
