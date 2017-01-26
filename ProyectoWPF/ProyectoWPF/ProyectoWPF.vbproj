@@ -139,5 +139,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="agregarCandidato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="crearVotante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="eliminarCandidato.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
