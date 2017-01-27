@@ -10,12 +10,12 @@
         <Label x:Name="lblUserAdmin" Content="Usuario" HorizontalAlignment="Left" Margin="39,64,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUserAdmin" HorizontalAlignment="Left" Height="23" Margin="144,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblClaveAdmin" Content="Clave" HorizontalAlignment="Left" Margin="39,133,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtClaveAdmin" HorizontalAlignment="Left" Height="23" Margin="144,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="bntIngresarAdmin" Content="Ingresar" HorizontalAlignment="Left" Margin="167,197,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Foreground="#FF363333">
             <Button.Background>
                 <SolidColorBrush Color="#FF3075B9" Opacity="0.3"/>
             </Button.Background>
         </Button>
+        <PasswordBox x:Name="passAdmin" HorizontalAlignment="Left" Margin="144,141,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
