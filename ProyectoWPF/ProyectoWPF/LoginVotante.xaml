@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VOTANTE" Height="250" Width="300">
+        Title="VOTANTE" Height="250" Width="300" Loaded="Window_Loaded">
     <Grid>
         <Label x:Name="lblCedVotante" Content="Nro. Cedula" HorizontalAlignment="Left" Margin="34,64,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnIngresarVotante" Content="Ingresar" HorizontalAlignment="Left" Margin="160,143,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Foreground="#FF3C3C3C">
@@ -13,7 +13,7 @@
                 <SolidColorBrush Color="#FF3075B9" Opacity="0.3"/>
             </Button.Background>
         </Button>
-        <PasswordBox x:Name="passVotante" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="txtCedula" HorizontalAlignment="Left" Height="23" Margin="140,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
