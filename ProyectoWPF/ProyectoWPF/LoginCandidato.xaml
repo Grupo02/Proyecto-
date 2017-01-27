@@ -7,11 +7,15 @@
         mc:Ignorable="d"
         Title="CANDIDATO" Height="300" Width="300">
     <Grid>
-        <Label x:Name="lblUserCandidato" Content="Usuario" HorizontalAlignment="Left" Margin="58,73,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtUserCandidato" HorizontalAlignment="Left" Height="23" Margin="131,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblClaveCandidato" Content="Clave" HorizontalAlignment="Left" Margin="58,132,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtClaveCandidato" HorizontalAlignment="Left" Height="23" Margin="131,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnIngresarCandidato" Content="Ingresar" HorizontalAlignment="Left" Margin="154,199,0,0" VerticalAlignment="Top" Width="75" Background="#FFB6D2FB" BorderBrush="{x:Null}" Foreground="#FF343333"/>
+        <Label x:Name="lblUserCandidato" Content="Usuario" HorizontalAlignment="Left" Margin="60,64,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblClaveCandidato" Content="Clave" HorizontalAlignment="Left" Margin="60,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUserCandidato" HorizontalAlignment="Left" Height="23" Margin="136,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtClaveCandidato" HorizontalAlignment="Left" Height="23" Margin="136,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnIngresarCandidato" Content="Ingresar" HorizontalAlignment="Left" Margin="167,206,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Foreground="#FF303030">
+            <Button.Background>
+                <SolidColorBrush Color="#FF3075B9" Opacity="0.3"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

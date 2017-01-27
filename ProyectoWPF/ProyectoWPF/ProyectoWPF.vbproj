@@ -68,12 +68,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoginAdmin.xaml.vb">
+      <DependentUpon>LoginAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginCandidato.xaml.vb">
+      <DependentUpon>LoginCandidato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginVotante.xaml.vb">
+      <DependentUpon>LoginVotante.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaAdministrador.xaml.vb">
       <DependentUpon>VentanaAdministrador.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaVotacion.xaml.vb">
       <DependentUpon>VentanaVotacion.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoginAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginCandidato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginVotante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="VOTANTE" Height="250" Width="300">
     <Grid>
-        <Button x:Name="btnVotante" Content="Button" HorizontalAlignment="Left" Margin="168,146,0,0" VerticalAlignment="Top" Width="75" Background="#FFB6D2FB" BorderBrush="{x:Null}" Foreground="#FF3A3A3A"/>
-        <TextBox x:Name="txtCedula" HorizontalAlignment="Left" Height="23" Margin="146,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblCedula" Content="Nro. Cedula" HorizontalAlignment="Left" Margin="44,74,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCedVotante" Content="Nro. Cedula" HorizontalAlignment="Left" Margin="34,64,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtVotante" HorizontalAlignment="Left" Height="23" Margin="141,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnIngresarVotante" Content="Ingresar" HorizontalAlignment="Left" Margin="160,143,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Foreground="#FF3C3C3C">
+            <Button.Background>
+                <SolidColorBrush Color="#FF3075B9" Opacity="0.3"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
