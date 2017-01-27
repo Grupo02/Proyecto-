@@ -25,9 +25,9 @@ Class MainWindow
             "Data Source=" & dbPath
 
         Using dbConexion As New OleDbConnection(strConexion)
-
-
-
+            Dim personaCmdBuilder = New OleDbCommand
+            Dim adapter As New OleDbDataAdapter
+            Dim lector As OleDbDataReader
         End Using
     End Sub
 End Class
