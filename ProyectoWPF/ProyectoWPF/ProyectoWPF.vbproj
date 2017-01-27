@@ -83,6 +83,9 @@
     <Compile Include="VentanaVotacion.xaml.vb">
       <DependentUpon>VentanaVotacion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VentanaVotante.xaml.vb">
+      <DependentUpon>VentanaVotante.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VentanaVotacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaVotante.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
