@@ -183,5 +183,23 @@
   <ItemGroup>
     <Resource Include="eliminarCandidato.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="moreno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="viteri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lasso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="moreno1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="viteri1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lasso1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
