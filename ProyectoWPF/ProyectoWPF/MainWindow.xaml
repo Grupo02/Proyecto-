@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="593,196,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\PaolaO\Documents\ESPOL\5S\Programación Visual\Proyecto_2P\Img\candidato.png"/>
-        <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="339,196,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\PaolaO\Documents\ESPOL\5S\Programación Visual\Proyecto_2P\Img\votante.png"/>
-        <Image x:Name="image2" HorizontalAlignment="Left" Height="100" Margin="93,196,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\PaolaO\Documents\ESPOL\5S\Programación Visual\Proyecto_2P\Img\admin.png"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="593,196,0,0" VerticalAlignment="Top" Width="100" Source="img/candidato.png"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="339,196,0,0" VerticalAlignment="Top" Width="100" Source="img/votante.png"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="100" Margin="93,196,0,0" VerticalAlignment="Top" Width="100" Source="img/admin.png"/>
         <Label x:Name="lblBienvenido" Content="BIENVENIDO" HorizontalAlignment="Left" Margin="285,69,0,0" VerticalAlignment="Top" Width="236" Foreground="#FF2774AA" FontSize="40"/>
         <Button x:Name="btnAdmin" Content="ADMINISTRADOR" HorizontalAlignment="Left" Margin="93,320,0,0" VerticalAlignment="Top" Width="104" Foreground="#FF4B4B4B" BorderBrush="{x:Null}">
             <Button.Background>

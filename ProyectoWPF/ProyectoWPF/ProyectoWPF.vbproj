@@ -175,36 +175,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="agregarCandidato.png" />
+    <Resource Include="img\imgCandidatos\moreno.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="crearVotante.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="eliminarCandidato.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="moreno.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="viteri.jpg" />
+    <Resource Include="img\imgCandidatos\viteri.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\imgCandidatos\lasso.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="moreno1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="viteri1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\imgCandidatos\lasso1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\admin.png" />
-    <Resource Include="img\candidato.png" />
-    <Resource Include="img\votante.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
