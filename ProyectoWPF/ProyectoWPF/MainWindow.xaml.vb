@@ -1,6 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports System.Data
 Class MainWindow
+
     Private Sub btnAdmin_Click(sender As Object, e As RoutedEventArgs) Handles btnAdmin.Click
         Dim loginAdmin As New LoginAdmin
         loginAdmin.Owner = Me
@@ -19,15 +20,6 @@ Class MainWindow
         loginCandidato.Show()
     End Sub
 
-    Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim dbPath = "C:\Users\PaolaO\Source\Repos\Proyecto-\Proyecto_Visual.accdb"
-        Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
-            "Data Source=" & dbPath
 
-        Using dbConexion As New OleDbConnection(strConexion)
-            Dim personaCmdBuilder = New OleDbCommand
-            Dim adapter As New OleDbDataAdapter
-            Dim lector As OleDbDataReader
-        End Using
-    End Sub
+
 End Class

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" Loaded="Window_Loaded">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="593,196,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\PaolaO\Documents\ESPOL\5S\Programación Visual\Proyecto_2P\Img\candidato.png"/>
         <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="339,196,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\PaolaO\Documents\ESPOL\5S\Programación Visual\Proyecto_2P\Img\votante.png"/>
