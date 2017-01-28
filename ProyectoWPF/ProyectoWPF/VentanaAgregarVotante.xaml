@@ -8,14 +8,14 @@
         Title="VentanaAgregarVotante" Height="300" Width="300">
     <Grid>
         <Label x:Name="lblNombreVotante" Content="Nombres:" HorizontalAlignment="Left" Height="24" Margin="29,53,0,0" VerticalAlignment="Top" Width="105"/>
-        <TextBox x:Name="txtNombresVotante" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,55,0,0" Cursor="dsfs"/>
+        <TextBox x:Name="txtNombresVotante" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,55,0,0" Cursor=""/>
         <Label x:Name="lblApellidosVotante" Content="Apellidos:" HorizontalAlignment="Left" Height="24" Margin="29,88,0,0" VerticalAlignment="Top" Width="105"/>
-        <TextBox x:Name="txtApellidosVotante" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,88,0,0" Cursor="dsfs"/>
+        <TextBox x:Name="txtApellidosVotante" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,88,0,0" Cursor=""/>
         <CheckBox x:Name="chBoxHombre" Content="Hombre" HorizontalAlignment="Left" Height="23" Margin="51,161,0,0" VerticalAlignment="Top" Width="83" FontSize="8"/>
         <CheckBox x:Name="chBoxMujer" Content="Mujer" HorizontalAlignment="Left" Height="23" Margin="139,161,0,0" VerticalAlignment="Top" Width="83" FontSize="8"/>
         <Button x:Name="btnGuardarVotante" Content="GUARDAR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="106,203,0,0" FontWeight="Bold" Background="#FFA8EC57" Foreground="#FF2E4C78"/>
         <Label x:Name="lblCedulaVotante" Content="Apellidos:" HorizontalAlignment="Left" Height="24" Margin="29,117,0,0" VerticalAlignment="Top" Width="105"/>
-        <TextBox x:Name="txtCedulaVotante" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,117,0,0" Cursor="dsfs"/>
+        <TextBox x:Name="txtCedulaVotante" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,117,0,0" Cursor=""/>
 
     </Grid>
 </Window>

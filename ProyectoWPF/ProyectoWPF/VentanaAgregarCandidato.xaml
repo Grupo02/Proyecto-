@@ -10,11 +10,11 @@
         <Image Source="https://wpdirecto.com/wp-content/uploads/2016/02/subir-imagenes-pesadas.jpg" x:Name="imgAgregarCandidato" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="84" Margin="10,24,0,0" OpacityMask="#FF2C2C2C" Opacity="0.3"/>
         <Button x:Name="btnAgregarImgCandidato" Content="Cargar imagen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="20,77,0,0" Height="15" FontSize="8" Background="#FF9BC0EC"/>
         <Label x:Name="lblNombreCandidato" Content="Nombres:" HorizontalAlignment="Left" Height="24" Margin="99,31,0,0" VerticalAlignment="Top" Width="105"/>
-        <TextBox x:Name="txtNombresCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,55,0,0" Cursor="dsfs"/>
+        <TextBox x:Name="txtNombresCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,55,0,0" Cursor=""/>
         <Label x:Name="lblApellidosCandidato" Content="Apellidos:" HorizontalAlignment="Left" Height="24" Margin="99,82,0,0" VerticalAlignment="Top" Width="105"/>
-        <TextBox x:Name="txtApellidosCandidato" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,106,0,0" Cursor="dsfs"/>
+        <TextBox x:Name="txtApellidosCandidato" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="139,106,0,0" Cursor=""/>
         <Label x:Name="lblListaCandidato" Content="Lista:" HorizontalAlignment="Left" Height="24" Margin="16,134,0,0" VerticalAlignment="Top" Width="37" FontSize="10"/>
-        <TextBox x:Name="txtListaCandidato" HorizontalAlignment="Left" Height="13" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Margin="50,139,0,0" Cursor="dsfs"/>
+        <TextBox x:Name="txtListaCandidato" HorizontalAlignment="Left" Height="13" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Margin="50,139,0,0" Cursor=""/>
         <Label x:Name="lblDignidadCandidato" Content="Dignidad:" HorizontalAlignment="Left" Height="24" Margin="99,134,0,0" VerticalAlignment="Top" Width="60" FontSize="11"/>
         <ComboBox x:Name="cBoxDignidad" HorizontalAlignment="Left" Height="19" Margin="139,158,0,0" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="chBoxHombre" Content="Hombre" HorizontalAlignment="Left" Height="10" Margin="20,106,0,0" VerticalAlignment="Top" Width="54" FontSize="8"/>
