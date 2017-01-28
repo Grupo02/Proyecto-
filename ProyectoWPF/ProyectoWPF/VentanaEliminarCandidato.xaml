@@ -1,0 +1,15 @@
+﻿<Window x:Class="VentanaEliminarCandidato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoWPF"
+        mc:Ignorable="d"
+        Title="VentanaEliminarCandidato" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="lblEliminarCandidato" Content="Seleccione candidato a eliminar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="177" Margin="55,44,0,0" Background="#FFF70303" Foreground="White"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="102" Margin="55,96,0,0" VerticalAlignment="Top" Width="177"/>
+        <Button x:Name="btnEliminarCandidato" Content="ELIMINAR" HorizontalAlignment="Left" Height="29" Margin="89,216,0,0" VerticalAlignment="Top" Width="100" Background="#FFF51E1E" Foreground="White"/>
+
+    </Grid>
+</Window>

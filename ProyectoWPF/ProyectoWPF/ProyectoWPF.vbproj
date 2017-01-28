@@ -80,6 +80,18 @@
     <Compile Include="VentanaAdministrador.xaml.vb">
       <DependentUpon>VentanaAdministrador.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VentanaAgregarCandidato.xaml.vb">
+      <DependentUpon>VentanaAgregarCandidato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAgregarVotante.xaml.vb">
+      <DependentUpon>VentanaAgregarVotante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEliminarCandidato.xaml.vb">
+      <DependentUpon>VentanaEliminarCandidato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEliminarVotante.xaml.vb">
+      <DependentUpon>VentanaEliminarVotante.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaVotacion.xaml.vb">
       <DependentUpon>VentanaVotacion.xaml</DependentUpon>
     </Compile>
@@ -111,6 +123,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="VentanaAdministrador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaAgregarCandidato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaAgregarVotante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEliminarCandidato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEliminarVotante.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

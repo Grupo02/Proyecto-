@@ -34,7 +34,7 @@
         <Label x:Name="lbl_agregarCandidato" Content="Agregar candidato" HorizontalAlignment="Left" Height="28" Margin="38,112,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Rockwell"/>
         <Label x:Name="lbl_agregarVotante" Content="Agregar votante" HorizontalAlignment="Left" Height="28" Margin="51,112,0,0" VerticalAlignment="Top" Width="118" FontSize="14" FontFamily="Rockwell" Grid.Column="1"/>
         <Label x:Name="lbl_agregarVotante_Copy" Content="Eliminar Candidato" HorizontalAlignment="Left" Height="28" Margin="40,112,0,0" VerticalAlignment="Top" Width="141" FontSize="14" FontFamily="Rockwell" Grid.Column="2"/>
-        <Button x:Name="btn_agregandoCandidato_Copy" Content="" HorizontalAlignment="Left" Margin="70,31,0,0" VerticalAlignment="Top" Width="75" Height="75" Grid.Row="1">
+        <Button x:Name="btn_EliminarVotante" Content="" HorizontalAlignment="Left" Margin="70,31,0,0" VerticalAlignment="Top" Width="75" Height="75" Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="img/eliminarVotante.png"/>
             </Button.Background>
