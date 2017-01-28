@@ -19,7 +19,4 @@ Class MainWindow
         loginCandidato.Owner = Me
         loginCandidato.Show()
     End Sub
-
-
-
 End Class

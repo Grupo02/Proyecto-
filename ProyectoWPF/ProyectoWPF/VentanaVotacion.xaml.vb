@@ -1,5 +1,5 @@
 ﻿Public Class VentanaVotacion
-    Private Sub Window_Closing(sender As Object, e As RoutedEventArgs)
+    Private Sub Window_Closed(sender As Object, e As EventArgs)
         Me.Owner.Owner.Close()
     End Sub
     Private Sub btn_op1_p_Click(sender As Object, e As RoutedEventArgs) Handles btn_op1_p.Click

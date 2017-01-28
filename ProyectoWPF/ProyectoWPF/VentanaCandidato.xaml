@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="CANDIDATO" Height="275" Width="300" Icon="img/cne.jpg">
+        Title="CANDIDATO" Height="275" Width="300" Icon="img/cne.jpg" Closed="Window_Closed">
     <Grid>
         <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="102,116,0,0" VerticalAlignment="Top" Width="82" Height="71" BorderBrush="{x:Null}">
             <Button.Background>
