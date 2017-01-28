@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaVotacion" Height="400" Width="600">
+        Title="VentanaVotacion" Height="400" Width="600" Icon="img/cne.jpg">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>
@@ -22,17 +22,17 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btn_op1_p" Content="" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="171" Height="126">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\moreno.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/moreno.jpg"/>
                         </Button.Background>
                     </Button>
                     <Button x:Name="btn_op2_p" Content="" HorizontalAlignment="Left" Margin="23,62,0,0" VerticalAlignment="Top" Width="144" Height="126" Grid.Column="1">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\viteri.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/viteri.jpg"/>
                         </Button.Background>
                     </Button>
                     <Button x:Name="btn_op3_p" Content="" HorizontalAlignment="Left" Height="126" Margin="10,62,0,0" VerticalAlignment="Top" Width="171" Grid.Column="2">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\lasso.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/lasso.jpg"/>
                         </Button.Background>
                     </Button>
                     <Label x:Name="lbl_op1" Content="Lista 35" HorizontalAlignment="Left" Height="46" Margin="56,236,0,0" VerticalAlignment="Top" Width="84" FontSize="22"/>
@@ -49,17 +49,17 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btn_op1_a" Content="" HorizontalAlignment="Left" Margin="32,62,0,0" VerticalAlignment="Top" Width="126" Height="126">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\rgonzalez.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/rGonzalez.jpg"/>
                         </Button.Background>
                     </Button>
                     <Button x:Name="btn_op2_a" Content="" HorizontalAlignment="Left" Margin="29,62,0,0" VerticalAlignment="Top" Width="144" Height="126" Grid.Column="1">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\fpuentes.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/fpuentes.jpg"/>
                         </Button.Background>
                     </Button>
                     <Button x:Name="btn_op3_a" Content="" HorizontalAlignment="Left" Height="126" Margin="21.5,62,0,0" VerticalAlignment="Top" Width="122" Grid.Column="2">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\llandazuri.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/llandazuri.jpg"/>
                         </Button.Background>
                     </Button>
                     <Label x:Name="lbl_op1_Copy" Content="Lista 9" HorizontalAlignment="Left" Height="46" Margin="56,236,0,0" VerticalAlignment="Top" Width="84" FontSize="22"/>
@@ -71,17 +71,17 @@
                 <Grid Background="White">
                     <Button x:Name="btn_op1_c" Content="" HorizontalAlignment="Left" Margin="30,62,0,0" VerticalAlignment="Top" Width="130" Height="126">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\ymartinez.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/ymartinez.jpg"/>
                         </Button.Background>
                     </Button>
                     <Button x:Name="btn_op2_c" Content="" HorizontalAlignment="Left" Margin="214,62,0,0" VerticalAlignment="Top" Width="144" Height="126">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\pdominguez.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/pdominguez.jpg"/>
                         </Button.Background>
                     </Button>
                     <Button x:Name="btn_op3_c" Content="" HorizontalAlignment="Left" Height="126" Margin="391,62,0,0" VerticalAlignment="Top" Width="171">
                         <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\Max\Dropbox\Img\gramos.jpg"/>
+                            <ImageBrush ImageSource="img/imgCandidatos/gramos.jpg"/>
                         </Button.Background>
                     </Button>
                     <Label x:Name="lbl_op1_Copy1" Content="Lista 35" HorizontalAlignment="Left" Height="46" Margin="56,236,0,0" VerticalAlignment="Top" Width="84" FontSize="22"/>

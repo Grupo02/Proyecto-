@@ -183,5 +183,28 @@
   <ItemGroup>
     <Resource Include="img\imgCandidatos\lasso.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\admin.png" />
+    <Resource Include="img\candidato.png" />
+    <Resource Include="img\votante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\imgCandidatos\fpuentes.jpg" />
+    <Resource Include="img\imgCandidatos\gramos.jpg" />
+    <Resource Include="img\imgCandidatos\llandazuri.jpg" />
+    <Resource Include="img\imgCandidatos\pdominguez.jpg" />
+    <Resource Include="img\imgCandidatos\rGonzalez.jpg" />
+    <Resource Include="img\imgCandidatos\ymartinez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\agregarCandidato.png" />
+    <Resource Include="img\CrearVotante.png" />
+    <Resource Include="img\eliminarCandidato.png" />
+    <Resource Include="img\eliminarVotante.png" />
+    <Resource Include="img\resultados.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

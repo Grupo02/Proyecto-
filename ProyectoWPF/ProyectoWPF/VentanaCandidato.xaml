@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="CANDIDATO" Height="275" Width="300">
+        Title="CANDIDATO" Height="275" Width="300" Icon="img/cne.jpg">
     <Grid>
         <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="102,116,0,0" VerticalAlignment="Top" Width="82" Height="71" BorderBrush="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\PaolaO\Documents\ESPOL\5S\Programación Visual\Proyecto_2P\Img\resultados.png"/>
+                <ImageBrush ImageSource="img/resultados.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="lblMostrarResultados" Content="MOSTRAR RESULTADOS DE VOTACIONES" HorizontalAlignment="Left" Margin="29,67,0,0" VerticalAlignment="Top" Width="234" Height="35"/>
