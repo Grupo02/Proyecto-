@@ -21,7 +21,7 @@ Public Class LoginAdmin
     End Sub
     Private Sub bntIngresarAdmin_Click(sender As Object, e As RoutedEventArgs) Handles bntIngresarAdmin.Click
 
-        Dim dbPath = "E:\base\Proyecto_Visual.mdb"
+        Dim dbPath = "Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath
         Dim dbConexion As New OleDbConnection(strConexion)
@@ -35,11 +35,16 @@ Public Class LoginAdmin
         Dim lector As OleDbDataReader
         lector = comandos.ExecuteReader
         If lector.HasRows = True Then
-            MsgBox("Al fin")
+            MsgBox("Login exitoso", MsgBoxStyle.Information, "Login")
         Else
-            MsgBox("NO :c")
+            MsgBox("No esta dentro de la base de datos", MsgBoxStyle.Critical, "Error")
         End If
         dbConexion.Close()
+        Dim ventanaAdmin As New VentanaAdministrador
+        ventanaAdmin.Owner = Me
+        Me.Hide()
+        Me.Owner.Hide()
+        ventanaAdmin.Show()
 
     End Sub
 
