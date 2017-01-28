@@ -3,7 +3,7 @@ Imports System.Data
 Public Class LoginAdmin
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim dbPath = "E:\VISUAL BASIC\Proyecto_Visual.mdb"
+        Dim dbPath = "Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath
         'Dim dbConexion As New OleDbConnection(strConexion)
