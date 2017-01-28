@@ -1,0 +1,16 @@
+﻿<Window x:Class="VentanaMostrarCandidatos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoWPF"
+        mc:Ignorable="d"
+        Title="VentanaMostrarCandidatos" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="lblPresidente" Content="Presidentes" HorizontalAlignment="Left" Height="25" Margin="25,31,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label x:Name="lblAsambleista" Content="Asambleistas" HorizontalAlignment="Left" Height="25" Margin="163,31,0,0" VerticalAlignment="Top" Width="72"/>
+        <DataGrid x:Name="dataGridPresidentes" HorizontalAlignment="Left" Height="152" Margin="10,64,0,0" VerticalAlignment="Top" Width="115"/>
+        <DataGrid x:Name="dataGridAsambleistas" HorizontalAlignment="Left" Height="152" Margin="145,64,0,0" VerticalAlignment="Top" Width="115"/>
+
+    </Grid>
+</Window>

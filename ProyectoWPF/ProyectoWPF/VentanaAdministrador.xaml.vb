@@ -26,4 +26,11 @@
         EliminarVotante.Owner = Me
         EliminarVotante.Show()
     End Sub
+
+    Private Sub btn_mostrarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btn_mostrarCandidato.Click
+        Dim MostrarCandidato As New VentanaMostrarCandidatos
+
+        MostrarCandidato.Owner = Me
+        MostrarCandidato.Show()
+    End Sub
 End Class
