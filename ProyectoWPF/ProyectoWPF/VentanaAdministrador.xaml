@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="Administración" Height="500" Width="600" Icon="img/cne.jpg" Closed="Window_Closed">
+        Title="Administración" Height="500" Width="600" Icon="img/cne.jpg" Closed="Window_Closed" VerticalAlignment="Center" HorizontalAlignment="Center">
     <Grid Margin="-10,0,10,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="250*"/>
@@ -33,7 +33,7 @@
                 <ImageBrush ImageSource="https://cdn.pixabay.com/photo/2012/04/18/19/56/graphs-37717_960_720.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblMostrarResultados" Content="Mostrar Resultados" HorizontalAlignment="Left" Height="41" Margin="39,20,0,0" VerticalAlignment="Top" Width="158" FontSize="14" FontFamily="Rockwell" Grid.Column="2" Grid.Row="1"/>
+        <Label x:Name="lblMostrarResultados" Content="Mostrar Resultados" HorizontalAlignment="Left" Height="41" Margin="39,20,0,0" VerticalAlignment="Top" Width="148" FontSize="14" FontFamily="Rockwell" Grid.Column="2" Grid.Row="1"/>
 
     </Grid>
 </Window>

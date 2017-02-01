@@ -1,6 +1,8 @@
 ﻿Public Class VentanaAdministrador
     Private Sub Window_Closed(sender As Object, e As EventArgs)
-        Me.Owner.Owner.Close()
+        Me.Hide()
+        Me.Owner.Owner.Show()
+
     End Sub
 
     Private Sub btn_agregandoCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btn_agregandoCandidato.Click

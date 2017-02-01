@@ -26,16 +26,15 @@ Public Class LoginCandidato
         lector = comandos.ExecuteReader
         If lector.HasRows = True Then
             MsgBox("Login exitoso", MsgBoxStyle.Information, "Login")
+            Dim ventanaCandidato As New VentanaCandidato
+            ventanaCandidato.Owner = Me
+            Me.Hide()
+            Me.Owner.Hide()
+            ventanaCandidato.Show()
         Else
             MsgBox("No esta dentro de la base de datos", MsgBoxStyle.Critical, "Error")
         End If
         dbConexion.Close()
-
-        Dim ventanaCandidato As New VentanaCandidato
-        ventanaCandidato.Owner = Me
-        Me.Hide()
-        Me.Owner.Hide()
-        ventanaCandidato.Show()
     End Sub
 
 
