@@ -9,12 +9,6 @@
         AgregarCandidato.Show()
     End Sub
 
-    Private Sub btn_eliminarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btn_eliminarCandidato.Click
-        Dim EliminarCandidato As New VentanaEliminarCandidato
-        EliminarCandidato.Owner = Me
-        EliminarCandidato.Show()
-    End Sub
-
     Private Sub btn_agregarDignidad_Click(sender As Object, e As RoutedEventArgs) Handles btn_agregarDignidad.Click
         Dim AgregarVotante As New VentanaAgregarVotante
         AgregarVotante.Owner = Me
