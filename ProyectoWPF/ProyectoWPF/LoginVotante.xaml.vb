@@ -3,7 +3,7 @@ Imports System.Data
 Public Class LoginVotante
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim dbPath = "Proyecto_Visual.mdb"
+        Dim dbPath = "../../Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath
         'Dim dbConexion As New OleDbConnection(strConexion)
@@ -19,7 +19,7 @@ Public Class LoginVotante
     End Sub
 
     Private Sub btnIngresarVotante_Click(sender As Object, e As RoutedEventArgs) Handles btnIngresarVotante.Click
-        Dim dbPath = "Proyecto_Visual.mdb"
+        Dim dbPath = "../../Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath
         Dim dbConexion As New OleDbConnection(strConexion)

@@ -2,7 +2,7 @@
 Imports System.Data
 Public Class LoginCandidato
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim dbPath = "Proyecto_Visual.mdb"
+        Dim dbPath = "../../Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath
 
@@ -11,7 +11,7 @@ Public Class LoginCandidato
         End Using
     End Sub
     Private Sub btnIngresarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnIngresarCandidato.Click
-        Dim dbPath = "E:\base\Proyecto_Visual.mdb"
+        Dim dbPath = "../../Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath
         Dim dbConexion As New OleDbConnection(strConexion)
