@@ -21,7 +21,7 @@
                 <ImageBrush ImageSource="img/candidato.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn_agregarDignidad" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="36,121,0,0" VerticalAlignment="Top" Width="109" Height="108">
+        <Button x:Name="btn_agregarDignidad" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="44,121,0,0" VerticalAlignment="Top" Width="109" Height="108">
             <Button.Background>
                 <ImageBrush ImageSource="https://cdn0.iconfinder.com/data/icons/man/100/man-11-512.png"/>
             </Button.Background>
