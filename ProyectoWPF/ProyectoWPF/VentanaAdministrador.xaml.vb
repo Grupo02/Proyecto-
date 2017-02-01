@@ -15,7 +15,9 @@
         AgregarVotante.Show()
     End Sub
 
-
-
-
+    Private Sub btnMostrarResultado_Click(sender As Object, e As RoutedEventArgs) Handles btnMostrarResultado.Click
+        Dim MostrarResultados As New VentanaResultados
+        MostrarResultados.Owner = Me
+        MostrarResultados.Show()
+    End Sub
 End Class
