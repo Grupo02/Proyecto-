@@ -83,14 +83,11 @@
     <Compile Include="VentanaAgregarCandidato.xaml.vb">
       <DependentUpon>VentanaAgregarCandidato.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VentanaAgregarVotante.xaml.vb">
-      <DependentUpon>VentanaAgregarVotante.xaml</DependentUpon>
+    <Compile Include="VentanaAgregarDignidad.xaml.vb">
+      <DependentUpon>VentanaAgregarDignidad.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaEliminarCandidato.xaml.vb">
       <DependentUpon>VentanaEliminarCandidato.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VentanaEliminarVotante.xaml.vb">
-      <DependentUpon>VentanaEliminarVotante.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaMostrarCandidatos.xaml.vb">
       <DependentUpon>VentanaMostrarCandidatos.xaml</DependentUpon>
@@ -133,15 +130,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VentanaAgregarVotante.xaml">
+    <Page Include="VentanaAgregarDignidad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VentanaEliminarCandidato.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VentanaEliminarVotante.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

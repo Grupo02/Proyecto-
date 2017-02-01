@@ -1,0 +1,17 @@
+﻿<Window x:Class="VentanaAgregarVotante"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoWPF"
+        mc:Ignorable="d"
+        Title="VentanaAgregarVotante" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="lblNuevaDignidad" Content="NUEVA DIGNIDAD" HorizontalAlignment="Left" Height="35" Margin="108,37,0,0" VerticalAlignment="Top" Width="169" Background="#FF27A4BF" Foreground="White" FontWeight="Bold" FontFamily="Segoe UI Historic" FontSize="18"/>
+        <TextBox x:Name="txtNombresVotante" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="109,133,0,0" Cursor=""/>
+        <Button x:Name="btnGuardarVotante" Content="GUARDAR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="109,209,0,0" FontWeight="Bold" Background="#FFA8EC57" Foreground="#FF2E4C78"/>
+        <Image Source="https://cdn0.iconfinder.com/data/icons/man/100/man-11-512.png" x:Name="image" HorizontalAlignment="Left" Height="94" Margin="10,10,0,0" VerticalAlignment="Top" Width="93"/>
+        <Label x:Name="lblNombreDignidad" Content="Nombre:" HorizontalAlignment="Left" Height="28" Margin="27,127,0,0" VerticalAlignment="Top" Width="82"/>
+
+    </Grid>
+</Window>

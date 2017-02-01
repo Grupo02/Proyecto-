@@ -15,7 +15,7 @@
         EliminarCandidato.Show()
     End Sub
 
-    Private Sub btn_agregarVotante_Click(sender As Object, e As RoutedEventArgs) Handles btn_agregarVotante.Click
+    Private Sub btn_agregarVotante_Click(sender As Object, e As RoutedEventArgs) Handles btn_agregarDignidad.Click
         Dim AgregarVotante As New VentanaAgregarVotante
         AgregarVotante.Owner = Me
         AgregarVotante.Show()
