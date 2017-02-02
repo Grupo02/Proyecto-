@@ -12,9 +12,9 @@
     End Sub
 
     Private Sub btn_agregarDignidad_Click(sender As Object, e As RoutedEventArgs) Handles btn_agregarDignidad.Click
-        Dim AgregarVotante As New VentanaAgregarVotante
-        AgregarVotante.Owner = Me
-        AgregarVotante.Show()
+        Dim AgregarDignidad As New VentanaAgregarDignidad
+        AgregarDignidad.Owner = Me
+        AgregarDignidad.Show()
     End Sub
 
     Private Sub btnMostrarResultado_Click(sender As Object, e As RoutedEventArgs) Handles btnMostrarResultado.Click

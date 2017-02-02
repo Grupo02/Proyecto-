@@ -10,7 +10,7 @@ Public Class VentanaAgregarCandidato
     Private Sub cBoxDignidad_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cBoxDignidad.SelectionChanged
         cBoxDignidad.Items.Add("Presidente")
         cBoxDignidad.Items.Add("Asambleísta")
-        cBoxDignidad.Items.Add("Alcalde")
+        cBoxDignidad.Items.Add("Parlamento Andino")
     End Sub
 
     Private Sub btnGuardarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardarCandidato.Click
@@ -25,13 +25,13 @@ Public Class VentanaAgregarCandidato
 
 
         If dignidades = "Presidente" Then
-            Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, dignidades, nombre, apellido, 0, listaCandidato, 0)
+            Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 1, nombre, apellido, 0, listaCandidato, 0)
         End If
-            If dignidades = "Asambleista" Then
-            Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, dignidades, nombre, apellido, 0, listaCandidato, 0)
+        If dignidades = "Asambleista" Then
+            Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 2, nombre, apellido, 0, listaCandidato, 0)
         End If
-            If dignidades = "Prefecto" Then
-            Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, dignidades, nombre, apellido, 0, listaCandidato, 0)
+        If dignidades = "Parlmento Andino" Then
+            Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 3, nombre, apellido, 0, listaCandidato, 0)
         End If
 
         Using conexion As New OleDbConnection(strConexion)
