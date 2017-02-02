@@ -27,18 +27,34 @@ Public Class LoginVotante
         dbConexion.Open()
 
         Dim strQuery1 As String = "SELECT Id FROM Votante WHERE Id ='" & txtCedula.Text & "'"
+        Dim strQuery2 As String = "SELECT estado FROM Votante WHERE Id ='" & txtCedula.Text & "' and estado=0"
+
         Dim comandos = New OleDbCommand(strQuery1, dbConexion)
+        Dim comandos2 = New OleDbCommand(strQuery2, dbConexion)
+
         Dim adapter As New OleDbDataAdapter
+        Dim adapter2 As New OleDbDataAdapter
+
         adapter.SelectCommand = comandos
+        adapter2.SelectCommand = comandos2
+
         Dim lector As OleDbDataReader
+        Dim lector2 As OleDbDataReader
+
         lector = comandos.ExecuteReader
+        lector2 = comandos2.ExecuteReader
         If lector.HasRows = True Then
             MsgBox("Login exitoso", MsgBoxStyle.Information, "Login")
-            Dim ventanaVotacion As New VentanaVotacion
-            ventanaVotacion.Owner = Me
-            Me.Hide()
-            Me.Owner.Hide()
-            ventanaVotacion.Show()
+            If lector2.HasRows = True Then
+                Dim ventanaVotacion As New VentanaVotacion
+                ventanaVotacion.Owner = Me
+                Me.Hide()
+                Me.Owner.Hide()
+                ventanaVotacion.Show()
+
+            Else
+                MsgBox("Usted ya ha votado", MsgBoxStyle.Exclamation, "Error")
+            End If
         Else
             MsgBox("No esta dentro de la base de datos", MsgBoxStyle.Critical, "Error")
         End If
