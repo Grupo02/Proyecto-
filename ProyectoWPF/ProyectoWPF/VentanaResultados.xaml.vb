@@ -1,4 +1,4 @@
-﻿Public Class VentanaCandidato
+﻿Public Class VentanaResultados
     Private Sub Window_Closed(sender As Object, e As EventArgs)
         Me.Hide()
         Me.Owner.Owner.Show()
