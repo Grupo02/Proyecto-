@@ -26,7 +26,7 @@
                 <SolidColorBrush Color="#FF5092F1" Opacity="0.3"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnAnuncio" Content="Ver Anuncio" HorizontalAlignment="Left" Margin="593,408,0,0" VerticalAlignment="Top" Width="112" BorderBrush="{x:Null}" Foreground="#FF2C2C2C" Background="#FFFDEDD7"/>
+        <Button x:Name="btnAnuncio" Content="Ver Anuncio" HorizontalAlignment="Left" Margin="593,401,0,0" VerticalAlignment="Top" Width="112" BorderBrush="{x:Null}" Foreground="#FF2C2C2C" Background="#FFFDEDD7"/>
 
     </Grid>
 </Window>

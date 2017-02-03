@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="VentanaAnuncio" Height="300" Width="300" Icon="img/cne.jpg">
     <Grid>
-        <MediaElement x:Name="myMediaElement" HorizontalAlignment="Left" Height="184" Margin="50,62,0,0" VerticalAlignment="Top" Width="184" Source="img/Incentivo al Voto Inclusivo.mp4" LoadedBehavior="Manual" Position="0:1:0" UnloadedBehavior="Manual"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="192,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="100" Margin="99,85,0,0" VerticalAlignment="Top" Width="100" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="99,85,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
