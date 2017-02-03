@@ -2,7 +2,7 @@
 Imports System.Data.OleDb
 
 Public Class VentanaAgregarDignidad
-    Private dbPath As String = "Proyecto_Visual.mdb"
+    Private dbPath As String = "../../Proyecto_Visual.mdb"
     Private strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
     Private dsDignidad As DataSet
 

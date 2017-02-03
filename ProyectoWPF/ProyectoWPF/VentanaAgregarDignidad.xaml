@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaAgregarDignidad" Height="300" Width="300" Loaded="Window_Loaded" Icon="img/cne.jpg">
+        Title="VentanaAgregarDignidad" Height="300" Width="300" Loaded="Window_Loaded" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="lblNuevaDignidad" Content="NUEVA DIGNIDAD" HorizontalAlignment="Left" Height="35" Margin="108,37,0,0" VerticalAlignment="Top" Width="169" Background="#FF27A4BF" Foreground="White" FontWeight="Bold" FontFamily="Segoe UI Historic" FontSize="18"/>
         <TextBox x:Name="txtNombresDignidad" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="109,133,0,0" Cursor=""/>
