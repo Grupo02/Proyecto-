@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaAgregarCandidato" Height="300" Width="300" Loaded="Window_Loaded">
+        Title="VentanaAgregarCandidato" Height="300" Width="300" Loaded="Window_Loaded" Icon="img/cne.jpg">
     <Grid RenderTransformOrigin="0.477,0.539">
         <Image Source="https://wpdirecto.com/wp-content/uploads/2016/02/subir-imagenes-pesadas.jpg" x:Name="imgAgregarCandidato" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="84" Margin="10,24,0,0" OpacityMask="#FF2C2C2C" Opacity="0.3"/>
         <Button x:Name="btnAgregarImgCandidato" Content="Cargar imagen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="20,77,0,0" Height="15" FontSize="8" Background="#FF9BC0EC"/>

@@ -86,11 +86,8 @@
     <Compile Include="VentanaAgregarDignidad.xaml.vb">
       <DependentUpon>VentanaAgregarDignidad.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VentanaAnuncio.xaml.vb">
-      <DependentUpon>VentanaAnuncio.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VentanaCandidato.xaml.vb">
-      <DependentUpon>VentanaCandidato.xaml</DependentUpon>
+    <Compile Include="VentanaResultadoCandidato.xaml.vb">
+      <DependentUpon>VentanaResultadoCandidato.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaVotacion.xaml.vb">
       <DependentUpon>VentanaVotacion.xaml</DependentUpon>
@@ -134,11 +131,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VentanaAnuncio.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VentanaCandidato.xaml">
+    <Page Include="VentanaResultadoCandidato.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

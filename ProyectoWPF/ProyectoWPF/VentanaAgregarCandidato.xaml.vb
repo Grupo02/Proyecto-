@@ -10,7 +10,7 @@ Public Class VentanaAgregarCandidato
     Private Sub cBoxDignidad_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cBoxDignidad.SelectionChanged
         cBoxDignidad.Items.Add("Presidente")
         cBoxDignidad.Items.Add("Asambleísta")
-        cBoxDignidad.Items.Add("Parlamento Andino")
+        cBoxDignidad.Items.Add("Consejal")
     End Sub
 
     Private Sub btnGuardarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardarCandidato.Click
@@ -30,7 +30,7 @@ Public Class VentanaAgregarCandidato
         If dignidades = "Asambleista" Then
             Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 2, nombre, apellido, 0, listaCandidato, 0)
         End If
-        If dignidades = "Parlmento Andino" Then
+        If dignidades = "Consejal" Then
             Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 3, nombre, apellido, 0, listaCandidato, 0)
         End If
 
