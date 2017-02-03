@@ -3,7 +3,7 @@ Imports System.Data.OleDb
 
 Public Class VentanaAgregarCandidato
 
-    Private dbPath As String = "Proyecto_Visual.mdb"
+    Private dbPath As String = "../../Proyecto_Visual.mdb"
     Private strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
     Private dsCandidato As DataSet
