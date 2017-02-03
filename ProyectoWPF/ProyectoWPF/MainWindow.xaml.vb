@@ -19,4 +19,11 @@ Class MainWindow
         loginCandidato.Owner = Me
         loginCandidato.Show()
     End Sub
+
+    Private Sub btnAnuncio_Click(sender As Object, e As RoutedEventArgs) Handles btnAnuncio.Click
+        Dim ventanaAnuncio As New VentanaAnuncio
+        ventanaAnuncio.Owner = Me
+        ventanaAnuncio.Show()
+
+    End Sub
 End Class

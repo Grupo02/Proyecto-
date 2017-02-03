@@ -86,6 +86,9 @@
     <Compile Include="VentanaAgregarDignidad.xaml.vb">
       <DependentUpon>VentanaAgregarDignidad.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VentanaAnuncio.xaml.vb">
+      <DependentUpon>VentanaAnuncio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaResultadoCandidato.xaml.vb">
       <DependentUpon>VentanaResultadoCandidato.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VentanaAgregarDignidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaAnuncio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,7 +232,15 @@
     <Resource Include="img\CrearVotante.png" />
     <Resource Include="img\eliminarCandidato.png" />
     <Resource Include="img\eliminarVotante.png" />
-    <Resource Include="img\resultados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Dignidad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Resultados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\Incentivo al Voto Inclusivo.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
