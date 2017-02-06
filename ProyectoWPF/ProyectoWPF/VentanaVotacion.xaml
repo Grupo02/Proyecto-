@@ -21,7 +21,7 @@
                         <ColumnDefinition Width="200*"/>
                     </Grid.ColumnDefinitions>
                     <DataGrid x:Name="dtgVotarPresidente" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2"/>
-                    <Button x:Name="btnVotar" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
+                    <Button x:Name="btnVotarPresidente" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Asambleistas">
@@ -31,23 +31,17 @@
                         <ColumnDefinition Width="210*"/>
                         <ColumnDefinition Width="178*"/>
                     </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dtgVotarAsambleista" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnVotarAsamblesita" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="156,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Consejales">
                 <Grid Background="White">
-                    <Button x:Name="btn_op1_c" Content="" HorizontalAlignment="Left" Margin="30,62,0,0" VerticalAlignment="Top" Width="130" Height="126">
-                        <Button.Background>
-                            <ImageBrush ImageSource="img/imgCandidatos/ymartinez.jpg"/>
-                        </Button.Background>
-                    </Button>
-                    <Label x:Name="lbl_op1_Copy1" Content="Lista 35" HorizontalAlignment="Left" Height="46" Margin="56,236,0,0" VerticalAlignment="Top" Width="84" FontSize="22"/>
+                    <DataGrid x:Name="dtgVotarConsejal" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260"/>
+                    <Button x:Name="btnVotarConsejal" Content="VOTAR" HorizontalAlignment="Left" Height="67" Margin="342,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <DataGrid x:Name="dtgVotarAsambleista" HorizontalAlignment="Left" Height="285" Margin="18,55,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnVotarAsambleista" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="147,165,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
-        <DataGrid x:Name="dtgVotarConsejal" HorizontalAlignment="Left" Height="285" Margin="18,55,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnVotarConsejal" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="147,165,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
 
 
     </Grid>
