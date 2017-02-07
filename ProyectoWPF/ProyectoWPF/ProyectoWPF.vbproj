@@ -68,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClaseCandidato.vb" />
     <Compile Include="LoginAdmin.xaml.vb">
       <DependentUpon>LoginAdmin.xaml</DependentUpon>
     </Compile>

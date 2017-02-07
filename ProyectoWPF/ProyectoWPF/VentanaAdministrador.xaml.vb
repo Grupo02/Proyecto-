@@ -2,7 +2,7 @@
     Private Sub Window_Closed(sender As Object, e As EventArgs)
         Me.Hide()
         Me.Owner.Owner.Show()
-
+        Me.Owner.Close()
     End Sub
 
     Private Sub btn_agregandoCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btn_agregandoCandidato.Click

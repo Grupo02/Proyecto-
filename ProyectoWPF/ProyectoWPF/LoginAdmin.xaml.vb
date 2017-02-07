@@ -14,8 +14,6 @@ Public Class LoginAdmin
 
         Using dbConexion As New OleDbConnection(strConexion)
             'Console.WriteLine("Conexion exitosa")
-
-
         End Using
 
     End Sub
