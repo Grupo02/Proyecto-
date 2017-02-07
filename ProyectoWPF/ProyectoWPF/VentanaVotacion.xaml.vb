@@ -54,7 +54,68 @@ Public Class VentanaVotacion
             dtgVotarAsambleista.DataContext = dsPesonas2
             dtgVotarConsejal.DataContext = dsPesonas3
 
+            Dim consultaCan As String = "Select * FROM Candidato;"
+            Dim adapterCan As New OleDbDataAdapter(New OleDbCommand(consultaCan, conexion))
+            Dim personaCmdBuilderCan = New OleDbCommandBuilder(adapterCan)
+            dsCandidato = New DataSet("Candidato")
+            adapterCan.FillSchema(dsCandidato, SchemaType.Source)
+
+            adapterCan.Fill(dsCandidato, "Candidato")
+
 
         End Using
+    End Sub
+
+    Private Sub btnVotarPresidente_Click(sender As Object, e As RoutedEventArgs)
+
+    End Sub
+
+    Private Sub dtgVotarPresidente_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarPresidente.SelectionChanged
+        Dim fila As DataRowView = sender.SelectedItem
+        Dim id As Integer = fila("Id")
+        dtgVotarPresidente.IsEnabled = False
+        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
+        UpdateCandidato(id)
+
+    End Sub
+
+    Public Sub UpdateCandidato(id As Integer)
+
+        For Each persona As DataRow In Me.dsCandidato.Tables("Candidato").Rows
+
+            If persona("Id") = id Then
+                persona("votos") += 1
+            End If
+        Next
+
+        Using conexion As New OleDbConnection(strConexion)
+            Dim consulta As String = "Select * FROM Candidato;"
+            'Dim adapter As New OleDbDataAdapter(consulta, conexion)
+            Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
+            Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
+            'adapter.FillSchema(dsPersonas, SchemaType.Source)
+            Try
+                adapter.Update(dsCandidato.Tables("Candidato"))
+            Catch ex As Exception
+                MessageBox.Show("Error al guardar")
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub dtgVotarConsejal_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarConsejal.SelectionChanged
+        Dim fila As DataRowView = sender.SelectedItem
+        Dim id As Integer = fila("Id")
+        dtgVotarConsejal.IsEnabled = False
+        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
+        UpdateCandidato(id)
+    End Sub
+
+    Private Sub dtgVotarAsambleista_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarAsambleista.SelectionChanged
+        Dim fila As DataRowView = sender.SelectedItem
+        Dim id As Integer = fila("Id")
+        dtgVotarAsambleista.IsEnabled = False
+        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
+        UpdateCandidato(id)
     End Sub
 End Class

@@ -20,7 +20,7 @@
                         <ColumnDefinition Width="200*"/>
                         <ColumnDefinition Width="200*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="dtgVotarPresidente" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2" SelectedIndex="0" ItemsSource="{Binding Path=Candidato}">
+                    <DataGrid x:Name="dtgVotarPresidente" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Candidato}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Id}"  Header="ID" />
                         <DataGridTextColumn Binding="{Binding nombre}"  Header="Nombre" />
@@ -40,13 +40,29 @@
                         <ColumnDefinition Width="210*"/>
                         <ColumnDefinition Width="178*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="dtgVotarAsambleista" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="dtgVotarAsambleista" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Candidato}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}"  Header="ID" />
+                            <DataGridTextColumn Binding="{Binding nombre}"  Header="Nombre" />
+                            <DataGridTextColumn Binding="{Binding Path=apellido}"  Header="Apellido" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                     <Button x:Name="btnVotarAsamblesita" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="156,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Consejales">
                 <Grid Background="White">
-                    <DataGrid x:Name="dtgVotarConsejal" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260"/>
+                    <DataGrid x:Name="dtgVotarConsejal" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" ItemsSource="{Binding Path=Candidato}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}"  Header="ID" />
+                            <DataGridTextColumn Binding="{Binding nombre}"  Header="Nombre" />
+                            <DataGridTextColumn Binding="{Binding Path=apellido}"  Header="Apellido" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                     <Button x:Name="btnVotarConsejal" Content="VOTAR" HorizontalAlignment="Left" Height="67" Margin="342,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
