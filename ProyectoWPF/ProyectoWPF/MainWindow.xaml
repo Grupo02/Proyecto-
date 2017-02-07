@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="Login" Height="500" Width="800" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen">
+        Title="Login" Height="500" Width="800" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     
     <Grid>
         <Expander Header="" Height="50" HorizontalAlignment="Left" Margin="378,347,0,0" Name="Expander1" VerticalAlignment="Top" Width="75" IsExpanded="False">

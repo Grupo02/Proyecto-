@@ -15,9 +15,7 @@ Public Class VentanaResultadoCandidato
     End Property
 
     Private Sub Window_Closed(sender As Object, e As EventArgs)
-        Me.Hide()
-        Me.Owner.Owner.Show()
-        Me.Owner.Close()
+        Me.Owner.Owner.Close()
     End Sub
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         Dim dbPath = "../../Proyecto_Visual.mdb"
@@ -59,5 +57,10 @@ Public Class VentanaResultadoCandidato
             End If
         Next
         bar.Content = gridi
+    End Sub
+
+    Private Sub btnCerrarSesionCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnCerrarSesionCandidato.Click
+        Me.Owner.Close()
+        Me.Owner.Owner.Show()
     End Sub
 End Class

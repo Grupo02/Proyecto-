@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaVotacion" Height="400" Width="600" Icon="img/cne.jpg" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
+        Title="VentanaVotacion" Height="400" Width="600" Icon="img/cne.jpg" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>

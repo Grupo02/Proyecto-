@@ -5,12 +5,12 @@
          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:local="clr-namespace:ProyectoWPF"
          mc:Ignorable="d"
-         Title="Resultados de su dignidad" Height="337.085" Width="377.826" Icon="img/cne.jpg" Closed="Window_Closed" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+         Title="Resultados de su dignidad" Height="337.085" Width="377.826" Icon="img/cne.jpg" Closed="Window_Closed" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid>
 
         <Label x:Name="lblMostrarResultados" Content="RESULTADOS DE VOTACIONES" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="342" Height="35" Background="#FF95BCE2" Foreground="White" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="btnCerrarSesionCandidato" Content="Cerrar Sesión" HorizontalAlignment="Left" Height="27" Margin="148,270,0,0" VerticalAlignment="Top" Width="81" Background="#FFDC4F4F" Foreground="White"/>
+        <Button x:Name="btnCerrarSesionCandidato" Content="Cerrar Sesión" HorizontalAlignment="Left" Height="35" Margin="148,261,0,0" VerticalAlignment="Top" Width="85" Background="#FFDC4F4F" Foreground="White"/>
         <Label x:Name="lbl_candidato" Content="Candidato" HorizontalAlignment="Left" Height="33" Margin="10,50,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="1.741,0.549" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="lbl_nombre" Content="{Binding Nombre}" HorizontalAlignment="Left" Height="33" Margin="113,55,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="1.741,0.549"/>
         <Label x:Name="lbl_apellido" Content="{Binding Apellido}" HorizontalAlignment="Left" Height="33" Margin="167,55,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="1.741,0.549"/>
