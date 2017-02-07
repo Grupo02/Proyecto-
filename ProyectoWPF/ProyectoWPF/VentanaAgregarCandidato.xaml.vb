@@ -15,17 +15,23 @@ Public Class VentanaAgregarCandidato
 
     Private Sub btnGuardarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardarCandidato.Click
 
+        If txtApellidosCandidato.Text = "" Or txtNombresCandidato.Text = "" Or txtCedulaCandidato.Text = "" Or txtListaCandidato.Text = "" Or txtUsuarioCandidato.Text = "" Or cBoxDignidad.Text = "" Then
+            MsgBox("Llenar todo los campos")
+        Else
+            UpdatePersona(txtCedulaCandidato.Text, txtNombresCandidato.Text, txtApellidosCandidato.Text, txtUsuarioCandidato.Text, passClaveUser.Password, cBoxDignidad.Text, txtListaCandidato.Text)
+            MsgBox("Candidato Guardado")
+            Me.Close()
+        End If
 
-        UpdatePersona(txtCedulaCandidato.Text, txtNombresCandidato.Text, txtApellidosCandidato.Text, txtUsuarioCandidato.Text, passClaveUser.Password, cBoxDignidad.Text, txtListaCandidato.Text)
-        MsgBox("Candidato Guardado")
-        Me.Close()
     End Sub
 
     Public Sub UpdatePersona(id As Integer, nombre As String, apellido As String, usuario As String, clave As String, dignidades As String, listaCandidato As Integer)
 
 
         If dignidades = "Presidente" Then
+
             Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 1, nombre, apellido, 0, listaCandidato, 0)
+
         End If
         If dignidades = "Asambleista" Then
             Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 2, nombre, apellido, 0, listaCandidato, 0)
