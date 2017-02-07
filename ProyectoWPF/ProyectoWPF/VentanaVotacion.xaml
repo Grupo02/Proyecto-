@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaVotacion" Height="400" Width="600" Icon="img/cne.jpg" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="VentanaVotacion" Height="400" Width="600" Icon="img/cne.jpg" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>
@@ -20,7 +20,16 @@
                         <ColumnDefinition Width="200*"/>
                         <ColumnDefinition Width="200*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="dtgVotarPresidente" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2" SelectedIndex="0"/>
+                    <DataGrid x:Name="dtgVotarPresidente" HorizontalAlignment="Left" Height="285" Margin="16,31,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2" SelectedIndex="0" ItemsSource="{Binding Path=Candidato}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}"  Header="ID" />
+                        <DataGridTextColumn Binding="{Binding nombre}"  Header="Nombre" />
+                        <DataGridTextColumn Binding="{Binding Path=apellido}"  Header="Apellido" />
+
+                    </DataGrid.Columns>
+
+                    </DataGrid>
+
                     <Button x:Name="btnVotarPresidente" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>

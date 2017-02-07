@@ -58,4 +58,10 @@ Public Class VentanaAgregarDignidad
         End Using
     End Sub
 
+    'Public Sub AgregarPanel()
+    '    Dim ventanaVotacion As New VentanaVotacion
+    '    ventanaVotacion.Owner = Me
+    '    ventanaVotacion.ad
+    'End Sub
+
 End Class

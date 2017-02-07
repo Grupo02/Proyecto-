@@ -22,7 +22,9 @@
     End Sub
 
     Private Sub btn_cerrar_Click(sender As Object, e As RoutedEventArgs) Handles btn_cerrar.Click
-        Me.Owner.Close()
-        Me.Owner.Owner.Show()
+
+        Dim VentanaPrincipal As New MainWindow
+        VentanaPrincipal.Show()
+        Me.Close()
     End Sub
 End Class

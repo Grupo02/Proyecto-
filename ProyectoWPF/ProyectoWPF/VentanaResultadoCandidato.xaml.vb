@@ -60,7 +60,8 @@ Public Class VentanaResultadoCandidato
     End Sub
 
     Private Sub btnCerrarSesionCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnCerrarSesionCandidato.Click
-        Me.Owner.Close()
-        Me.Owner.Owner.Show()
+        Dim VentanaPrincipal As New MainWindow
+        VentanaPrincipal.Show()
+        Me.Close()
     End Sub
 End Class
