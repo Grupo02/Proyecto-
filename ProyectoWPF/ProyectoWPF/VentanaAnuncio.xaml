@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaAnuncio" Height="300" Width="300" Icon="img/cne.jpg">
-    <Grid>
-        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="100" Margin="99,85,0,0" VerticalAlignment="Top" Width="100" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="99,85,0,0" VerticalAlignment="Top" Width="100"/>
+        Title="VentanaAnuncio" Height="250" Width="300" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen">
+    <Grid Margin="4,0,-4,0">
+        <MediaElement x:Name="src" HorizontalAlignment="Left" Height="187" Margin="17,15,0,0" VerticalAlignment="Top" Width="246" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="187" Margin="16,14,0,0" VerticalAlignment="Top" Width="246"/>
     </Grid>
 </Window>
