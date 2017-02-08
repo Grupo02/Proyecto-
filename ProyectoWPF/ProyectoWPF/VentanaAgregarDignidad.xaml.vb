@@ -14,9 +14,16 @@ Public Class VentanaAgregarDignidad
 
         End Try
 
-        UpdateDignidad(id, txtNombresDignidad.Text)
+        If txtNombresDignidad.Text = "" Then
+            MsgBox("No se puede dejar vacío")
+        Else
+            UpdateDignidad(id, txtNombresDignidad.Text)
+            MsgBox("Dignidad Guardada")
+            Me.Close()
 
-        Me.Close()
+        End If
+
+
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
@@ -50,7 +57,7 @@ Public Class VentanaAgregarDignidad
 
             Try
                 adapter.Update(dsDignidad.Tables("Dignidad"))
-                MsgBox("Dignidad Guardado")
+
             Catch ex As Exception
                 MessageBox.Show("Error al guardar")
             End Try
