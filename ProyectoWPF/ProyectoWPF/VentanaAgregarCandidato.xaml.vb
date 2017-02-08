@@ -7,6 +7,7 @@ Public Class VentanaAgregarCandidato
     Private strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
     Private dsCandidato As DataSet
+
     Private Sub cBoxDignidad_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cBoxDignidad.SelectionChanged
         cBoxDignidad.Items.Add("Presidente")
         cBoxDignidad.Items.Add("Asambleísta")
@@ -26,12 +27,8 @@ Public Class VentanaAgregarCandidato
     End Sub
 
     Public Sub UpdatePersona(id As Integer, nombre As String, apellido As String, usuario As String, clave As String, dignidades As String, listaCandidato As Integer)
-
-
         If dignidades = "Presidente" Then
-
             Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 1, nombre, apellido, 0, listaCandidato, 0)
-
         End If
         If dignidades = "Asambleista" Then
             Me.dsCandidato.Tables("Candidato").Rows.Add(id, usuario, clave, 2, nombre, apellido, 0, listaCandidato, 0)
@@ -46,8 +43,6 @@ Public Class VentanaAgregarCandidato
             Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
             Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
             'adapter.FillSchema(dsPersonas, SchemaType.Source)
-
-
             Try
                 adapter.Update(dsCandidato.Tables("Candidato"))
             Catch ex As Exception

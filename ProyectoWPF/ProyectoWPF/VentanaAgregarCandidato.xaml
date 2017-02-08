@@ -5,40 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaAgregarCandidato" Height="300" Width="300" Loaded="Window_Loaded" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen">
+        Title="VentanaAgregarCandidato" Height="389.273" Width="300" Loaded="Window_Loaded" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="5" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="270*" />
+            <RowDefinition Height="89*" />
         </Grid.RowDefinitions>
-        <Grid RenderTransformOrigin="0.477,0.539">
-            <Label x:Name="lblNombreCandidato" Content="Nombres:" HorizontalAlignment="Left" Height="24" Margin="99,12,0,0" VerticalAlignment="Top" Width="105"/>
-            <TextBox x:Name="txtNombresCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="159,14,0,0" Cursor=""/>
-            <Label x:Name="lblApellidosCandidato" Content="Apellidos:" HorizontalAlignment="Left" Height="24" Margin="99,45,0,0" VerticalAlignment="Top" Width="105"/>
-            <TextBox x:Name="txtApellidosCandidato" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="159,51,0,0" Cursor=""/>
-            <Label x:Name="lblListaCandidato" Content="Lista:" HorizontalAlignment="Left" Height="24" Margin="16,134,0,0" VerticalAlignment="Top" Width="37" FontSize="10"/>
-            <TextBox x:Name="txtListaCandidato" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Margin="50,139,0,-26" Cursor=""/>
-            <Label x:Name="lblDignidadCandidato" Content="Dignidad:" HorizontalAlignment="Left" Height="24" Margin="99,75,0,0" VerticalAlignment="Top" Width="60" FontSize="11"/>
+        <Grid RenderTransformOrigin="0.477,0.539" Margin="0,0,0,21">
+            <Label x:Name="lblNombreCandidato" Content="Nombres:" HorizontalAlignment="Left" Height="24" Margin="32,7,0,0" VerticalAlignment="Top" Width="105"/>
+            <TextBox x:Name="txtNombresCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="120,9,0,0" Cursor=""/>
+            <Label x:Name="lblApellidosCandidato" Content="Apellidos:" HorizontalAlignment="Left" Height="24" Margin="32,40,0,0" VerticalAlignment="Top" Width="105"/>
+            <TextBox x:Name="txtApellidosCandidato" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="120,46,0,0" Cursor=""/>
+            <TextBox x:Name="txtListaCandidato" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="120,234,0,-4" Cursor=""/>
+            <Label x:Name="lblDignidadCandidato" Content="Dignidad:" HorizontalAlignment="Left" Height="24" Margin="32,75,0,0" VerticalAlignment="Top" Width="60" FontSize="11"/>
 
-            <StackPanel>
-                <ComboBox x:Name="cBoxDignidad" HorizontalAlignment="Left" Height="19" Margin="159,80,0,0" VerticalAlignment="Top" Width="120">
+            <StackPanel Margin="0,0,0,-11">
+                <ComboBox x:Name="cBoxDignidad" HorizontalAlignment="Left" Height="19" Margin="120,80,0,0" VerticalAlignment="Top" Width="120">
                     <Label Content="Presidente"/>
                     <Label Content="Asambleista"/>
                     <Label Content="Consejal"/>
                 </ComboBox>
             </StackPanel>
 
-            <Label x:Name="lblUsuarioCandidato" Content="Usuario:" HorizontalAlignment="Left" Height="24" Margin="99,113,0,0" VerticalAlignment="Top" Width="73"/>
-            <TextBox x:Name="txtUsuarioCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="159,115,0,0" Cursor=""/>
-            <Label x:Name="lblClaveCandidato" HorizontalAlignment="Left" Height="24" Margin="99,148,0,0" VerticalAlignment="Top" Width="50" Content="Clave:"/>
-            <PasswordBox x:Name="passClaveUser" HorizontalAlignment="Left" Height="24" Margin="159,148,0,0" VerticalAlignment="Top" Width="120"/>
-            <Label x:Name="lblCedulaCandidato" HorizontalAlignment="Left" Height="24" Margin="99,183,0,0" VerticalAlignment="Top" Width="50" Content="DNI:"/>
-            <TextBox x:Name="txtCedulaCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="159,185,0,0" Cursor=""/>
+            <Label x:Name="lblUsuarioCandidato" Content="Usuario:" HorizontalAlignment="Left" Height="24" Margin="32,108,0,0" VerticalAlignment="Top" Width="73"/>
+            <TextBox x:Name="txtUsuarioCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="120,110,0,0" Cursor=""/>
+            <Label x:Name="lblClaveCandidato" HorizontalAlignment="Left" Height="24" Margin="35,148,0,0" VerticalAlignment="Top" Width="74" Content="Clave:"/>
+            <PasswordBox x:Name="passClaveUser" HorizontalAlignment="Left" Height="24" Margin="120,148,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_lista" HorizontalAlignment="Left" Height="24" Margin="35,183,0,0" VerticalAlignment="Top" Width="70" Content="DNI"/>
+            <TextBox x:Name="txtCedulaCandidato" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="120,185,0,-30" Cursor=""/>
+            <Label x:Name="lblLista" HorizontalAlignment="Left" Height="24" Margin="35,229,0,-4" VerticalAlignment="Top" Width="74" Content="Lista"/>
         </Grid>
-        <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" />
+        <GridSplitter HorizontalAlignment="Stretch" Margin="0,0,0,25" Grid.Row="1" />
 
-        <Button x:Name="btnGuardarCandidato"  Grid.Row="2" Content="GUARDAR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="106,10,0,0" FontWeight="Bold" Background="#FFA8EC57" Foreground="#FF2E4C78"/>
+        <Button x:Name="btnGuardarCandidato"  Grid.Row="1" Content="GUARDAR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="102,24,0,0" FontWeight="Bold" Background="#FFA8EC57" Foreground="#FF2E4C78" Height="22"/>
     </Grid>
 </Window>
 
