@@ -10,13 +10,22 @@ Public Class VentanaVotacion
     Private dsCandidato As DataSet
     Private dsVotante As DataSet
 
+    Private _cedula As Integer
+    Public Property Cedula() As Integer
+        Get
+            Return _cedula
+        End Get
+        Set(ByVal value As Integer)
+            _cedula = value
+        End Set
+    End Property
 
     Private Sub Window_Closed(sender As Object, e As EventArgs)
         Me.Hide()
         Me.Owner.Owner.Show()
     End Sub
 
-    
+
 
 
 
@@ -58,8 +67,6 @@ Public Class VentanaVotacion
             adapterCan.FillSchema(dsCandidato, SchemaType.Source)
 
             adapterCan.Fill(dsCandidato, "Candidato")
-
-
         End Using
     End Sub
 
@@ -69,58 +76,33 @@ Public Class VentanaVotacion
         Dim fila As DataRowView = sender.SelectedItem
         Dim id As Integer = fila("Id")
         dtgVotarPresidente.IsEnabled = False
-        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
-        UpdateCandidato(id)
+        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"), MsgBoxStyle.Information)
+
+        UpdateCandidato()
 
     End Sub
 
-    Public Sub UpdateCandidato(id As Integer)
+    Public Sub UpdateCandidato()
+        Dim dsVotante As DataSet
+        Using conectar As New OleDbConnection(strConexion)
+            Dim consultar As String = "Select * FROM Votante;"
+            Dim adapterV As New OleDbDataAdapter(New OleDbCommand(consultar, conectar))
+            Dim personaCmdBuilder = New OleDbCommandBuilder(adapterV)
+            dsVotante = New DataSet("Votante")
+            adapterV.FillSchema(dsVotante, SchemaType.Source)
 
-        For Each persona As DataRow In Me.dsCandidato.Tables("Candidato").Rows
-
-            If persona("Id") = id Then
-                persona("votos") += 1
+            adapterV.Fill(dsVotante, "Votante")
+        End Using
+        For Each persona As DataRow In dsVotante.Tables("Votante").Rows
+            Dim uno = 1
+            If persona("Id") = Cedula Then
+                persona("estado") = uno
             End If
         Next
-
         Using conexion As New OleDbConnection(strConexion)
-            Dim consulta As String = "Select * FROM Candidato;"
-            'Dim adapter As New OleDbDataAdapter(consulta, conexion)
-            Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
+            Dim consultar As String = "Select * FROM Votante;"
+            Dim adapter As New OleDbDataAdapter(New OleDbCommand(consultar, conexion))
             Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
-            'adapter.FillSchema(dsPersonas, SchemaType.Source)
-            Try
-                adapter.Update(dsCandidato.Tables("Candidato"))
-            Catch ex As Exception
-                MessageBox.Show("Error al guardar")
-            End Try
-
-        End Using
-    End Sub
-
-    Private Sub dtgVotarConsejal_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarConsejal.SelectionChanged
-        Dim fila As DataRowView = sender.SelectedItem
-        Dim id As Integer = fila("Id")
-        dtgVotarConsejal.IsEnabled = False
-        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
-        UpdateCandidato(id)
-    End Sub
-
-    Private Sub dtgVotarAsambleista_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarAsambleista.SelectionChanged
-        Dim fila As DataRowView = sender.SelectedItem
-        Dim id As Integer = fila("Id")
-        dtgVotarAsambleista.IsEnabled = False
-        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
-        UpdateCandidato(id)
-    End Sub
-
-    Private Sub btnGuardar_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardar.Click
-        Using conexion As New OleDbConnection(strConexion)
-            Dim consulta As String = "update Votante set estado =1 "
-            'Dim adapter As New OleDbDataAdapter(consulta, conexion)
-            Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
-            Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
-            'adapter.FillSchema(dsPersonas, SchemaType.Source)
             Try
                 adapter.Update(dsVotante.Tables("Votante"))
             Catch ex As Exception
@@ -129,5 +111,21 @@ Public Class VentanaVotacion
 
         End Using
 
+    End Sub
+
+    Private Sub dtgVotarConsejal_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarConsejal.SelectionChanged
+        Dim fila As DataRowView = sender.SelectedItem
+        Dim id As Integer = fila("Id")
+        dtgVotarConsejal.IsEnabled = False
+        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
+        UpdateCandidato()
+    End Sub
+
+    Private Sub dtgVotarAsambleista_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarAsambleista.SelectionChanged
+        Dim fila As DataRowView = sender.SelectedItem
+        Dim id As Integer = fila("Id")
+        dtgVotarAsambleista.IsEnabled = False
+        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
+        UpdateCandidato()
     End Sub
 End Class

@@ -52,7 +52,7 @@ Public Class LoginVotante
                 Me.Hide()
                 Me.Owner.Hide()
                 ventanaVotacion.Show()
-
+                ventanaVotacion.Cedula = Integer.Parse(txtCedula.Text)
             Else
                 MsgBox("Usted ya ha votado", MsgBoxStyle.Exclamation, "Error")
             End If
