@@ -29,6 +29,7 @@ Public Class LoginVotante
         Dim strQuery1 As String = "SELECT Id FROM Votante WHERE Id ='" & txtCedula.Text & "'"
         Dim strQuery2 As String = "SELECT estado FROM Votante WHERE Id ='" & txtCedula.Text & "' and estado=0"
 
+
         Dim comandos = New OleDbCommand(strQuery1, dbConexion)
         Dim comandos2 = New OleDbCommand(strQuery2, dbConexion)
 

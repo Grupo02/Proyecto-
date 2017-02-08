@@ -8,6 +8,7 @@ Public Class VentanaVotacion
     Private dsPesonas2 As DataSet
     Private dsPesonas3 As DataSet
     Private dsCandidato As DataSet
+    Private dsVotante As DataSet
 
 
     Private Sub Window_Closed(sender As Object, e As EventArgs)
@@ -15,13 +16,9 @@ Public Class VentanaVotacion
         Me.Owner.Owner.Show()
     End Sub
 
-    Private Sub btnVotarConsejal_Click(sender As Object, e As RoutedEventArgs) Handles btnVotarConsejal.Click
+    
 
-    End Sub
 
-    Private Sub btnVotarAsamblesita_Click(sender As Object, e As RoutedEventArgs)
-
-    End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         Dim VenVotante As LoginVotante
@@ -66,9 +63,7 @@ Public Class VentanaVotacion
         End Using
     End Sub
 
-    Private Sub btnVotarPresidente_Click(sender As Object, e As RoutedEventArgs)
 
-    End Sub
 
     Private Sub dtgVotarPresidente_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarPresidente.SelectionChanged
         Dim fila As DataRowView = sender.SelectedItem
@@ -117,5 +112,22 @@ Public Class VentanaVotacion
         dtgVotarAsambleista.IsEnabled = False
         MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
         UpdateCandidato(id)
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardar.Click
+        Using conexion As New OleDbConnection(strConexion)
+            Dim consulta As String = "update Votante set estado =1 "
+            'Dim adapter As New OleDbDataAdapter(consulta, conexion)
+            Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
+            Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
+            'adapter.FillSchema(dsPersonas, SchemaType.Source)
+            Try
+                adapter.Update(dsVotante.Tables("Votante"))
+            Catch ex As Exception
+                MessageBox.Show("Error al guardar")
+            End Try
+
+        End Using
+
     End Sub
 End Class

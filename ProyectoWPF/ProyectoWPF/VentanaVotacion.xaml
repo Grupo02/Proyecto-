@@ -29,8 +29,6 @@
                     </DataGrid.Columns>
 
                     </DataGrid>
-
-                    <Button x:Name="btnVotarPresidente" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Asambleistas">
@@ -49,7 +47,6 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="btnVotarAsamblesita" Grid.ColumnSpan="2" Content="VOTAR" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="156,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Consejales">
@@ -63,7 +60,7 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="btnVotarConsejal" Content="VOTAR" HorizontalAlignment="Left" Height="67" Margin="342,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
+                    <Button x:Name="btnGuardar" Content="GUARDAR" HorizontalAlignment="Left" Height="67" Margin="342,141,0,0" VerticalAlignment="Top" Width="177" Background="#FF369B07" Foreground="White" FontSize="36"/>
                 </Grid>
             </TabItem>
         </TabControl>
