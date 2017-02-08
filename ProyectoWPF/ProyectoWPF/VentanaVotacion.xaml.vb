@@ -2,13 +2,13 @@
 Imports System.Data.OleDb
 
 Public Class VentanaVotacion
-    Private dbPath As String = "../../Proyecto_Visual.mdb"
-    Private strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
     Private dsPesonas As DataSet
-    Private dsPesonas2 As DataSet
-    Private dsPesonas3 As DataSet
     Private dsCandidato As DataSet
-    Private dsVotante As DataSet
+    Private dsCandidato2 As DataSet
+    Dim btn_actual As New Button
+    Dim dbPath = "../../Proyecto_Visual.mdb"
+    Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
+            "Data Source=" & dbPath
 
     Private _cedula As Integer
     Public Property Cedula() As Integer
@@ -20,68 +20,110 @@ Public Class VentanaVotacion
         End Set
     End Property
 
-    Private Sub Window_Closed(sender As Object, e As EventArgs)
-        Me.Hide()
-        Me.Owner.Owner.Show()
-    End Sub
-
-
-
-
-
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim VenVotante As LoginVotante
-        VenVotante = Me.Owner
-        VenVotante.Hide()
-
+        Dim nombre As String
+        Dim dsPersonas As DataSet
+        Dim dsPersonas2 As DataSet
         Using conexion As New OleDbConnection(strConexion)
-
-            Dim consulta As String = "SELECT Candidato.Id, Candidato.nombre, Candidato.apellido FROM Candidato INNER JOIN Dignidad ON Candidato.dignidad = Dignidad.Id WHERE Candidato.dignidad=1;"
-            Dim consulta2 As String = "SELECT Candidato.Id, Candidato.nombre, Candidato.apellido FROM Candidato INNER JOIN Dignidad ON Candidato.dignidad = Dignidad.Id WHERE Candidato.dignidad=2;"
-            Dim consulta3 As String = "SELECT Candidato.Id, Candidato.nombre, Candidato.apellido FROM Candidato INNER JOIN Dignidad ON Candidato.dignidad = Dignidad.Id WHERE Candidato.dignidad=3;"
-            'Dim adapter As New OleDbDataAdapter(consulta, conexion)
+            Dim consulta As String = "Select * FROM Dignidad;"
             Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
-            Dim adapter2 As New OleDbDataAdapter(New OleDbCommand(consulta2, conexion))
-            Dim adapter3 As New OleDbDataAdapter(New OleDbCommand(consulta3, conexion))
             Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
-            Dim personaCmdBuilder2 = New OleDbCommandBuilder(adapter2)
-            Dim personaCmdBuilder3 = New OleDbCommandBuilder(adapter3)
-            dsPesonas = New DataSet("Candidato")
-            dsPesonas2 = New DataSet("Candidato")
-            dsPesonas3 = New DataSet("Candidato")
-            adapter.FillSchema(dsPesonas, SchemaType.Source)
-            adapter.Fill(dsPesonas, "Candidato")
-            adapter2.FillSchema(dsPesonas2, SchemaType.Source)
-            adapter2.Fill(dsPesonas2, "Candidato")
-            adapter3.FillSchema(dsPesonas3, SchemaType.Source)
-            adapter3.Fill(dsPesonas3, "Candidato")
+            dsPersonas = New DataSet("Dignidad")
+            adapter.FillSchema(dsPersonas, SchemaType.Source)
 
-            dtgVotarPresidente.DataContext = dsPesonas
-            dtgVotarAsambleista.DataContext = dsPesonas2
-            dtgVotarConsejal.DataContext = dsPesonas3
-
-            Dim consultaCan As String = "Select * FROM Candidato;"
-            Dim adapterCan As New OleDbDataAdapter(New OleDbCommand(consultaCan, conexion))
-            Dim personaCmdBuilderCan = New OleDbCommandBuilder(adapterCan)
-            dsCandidato = New DataSet("Candidato")
-            adapterCan.FillSchema(dsCandidato, SchemaType.Source)
-
-            adapterCan.Fill(dsCandidato, "Candidato")
+            adapter.Fill(dsPersonas, "Dignidad")
         End Using
+        Using conexion2 As New OleDbConnection(strConexion)
+
+            Dim consulta2 As String = "Select * FROM Candidato;"
+            Dim adapter2 As New OleDbDataAdapter(New OleDbCommand(consulta2, conexion2))
+            Dim personaCmdBuilder2 = New OleDbCommandBuilder(adapter2)
+            dsPersonas2 = New DataSet("Candidato")
+            adapter2.FillSchema(dsPersonas2, SchemaType.Source)
+
+            adapter2.Fill(dsPersonas2, "Candidato")
+        End Using
+        For Each dig As DataRow In dsPersonas.Tables("Dignidad").Rows
+            Dim uno As Integer = 0
+            Dim dos As Integer = 250
+            Dim suma As Integer = 0
+
+
+            nombre = dig("nombre")
+
+            Dim ti As New TabItem
+            ti.Header = nombre
+            Dim grid As New StackPanel
+            Dim scroll As New ScrollViewer
+
+            For Each dig2 As DataRow In dsPersonas2.Tables("Candidato").Rows
+                If dig("Id") = dig2("dignidad") Then
+                    suma = suma + dig2("votos")
+                End If
+            Next
+            'MsgBox(suma)
+            For Each dig2 As DataRow In dsPersonas2.Tables("Candidato").Rows
+                If dig("Id") = dig2("dignidad") Then
+                    Dim lbl As New Label
+                    lbl.Content = dig2("nombre") & " " & dig2("apellido")
+                    Dim btn As New Button
+                    btn.DataContext = dig2
+                    AddHandler btn.Click, AddressOf btn_Click
+                    btn.Margin = New Thickness(0, -20, 0, 0)
+                    btn.Width = 100
+                    btn.Content = "Votar"
+                    lbl.Margin = New Thickness(0, 0, 0, 0)
+                    grid.Children.Add(lbl)
+                    grid.Children.Add(btn)
+                End If
+            Next
+            scroll.Content = grid
+            ti.Content = scroll
+            tbC.Items.Add(ti)
+        Next
     End Sub
+    Private Sub btn_Click(sender As Object, e As RoutedEventArgs)
+        Me.btn_actual = sender
+        ' MsgBox(btn_actual.DataContext("nombre"))
+        MsgBox(btn_actual.DataContext("Dignidad"))
+        Using conexion2 As New OleDbConnection(strConexion)
+            Dim consulta2 As String = "Select * FROM Candidato;"
+            Dim adapter2 As New OleDbDataAdapter(New OleDbCommand(consulta2, conexion2))
+            Dim personaCmdBuilder2 = New OleDbCommandBuilder(adapter2)
+            dsCandidato2 = New DataSet("Candidato")
+            adapter2.FillSchema(dsCandidato2, SchemaType.Source)
 
-
-
-    Private Sub dtgVotarPresidente_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarPresidente.SelectionChanged
-        Dim fila As DataRowView = sender.SelectedItem
-        Dim id As Integer = fila("Id")
-        dtgVotarPresidente.IsEnabled = False
-        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"), MsgBoxStyle.Information)
-
+            adapter2.Fill(dsCandidato2, "Candidato")
+        End Using
+        '------------------------
+        For Each persona As DataRow In dsCandidato2.Tables("Candidato").Rows
+            Dim uno = 1
+            If persona("Id") = btn_actual.DataContext("Id") Then
+                persona("votos") += uno
+            End If
+        Next
+        '------------------------
+        Using conexion As New OleDbConnection(strConexion)
+            Dim consultar As String = "Select * FROM Candidato;"
+            Dim adapter As New OleDbDataAdapter(New OleDbCommand(consultar, conexion))
+            Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
+            Try
+                adapter.Update(dsCandidato2.Tables("Candidato"))
+            Catch ex As Exception
+                MessageBox.Show("Error al guardar")
+            End Try
+        End Using
+        '------------------------
+        Dim contador = 1
+        For Each tabi As TabItem In tbC.Items
+            If contador = btn_actual.DataContext("Dignidad") Then
+                tabi.Content.IsEnabled = False
+                Exit For
+            End If
+            contador += 1
+        Next
         UpdateCandidato()
-
     End Sub
-
     Public Sub UpdateCandidato()
         Dim dsVotante As DataSet
         Using conectar As New OleDbConnection(strConexion)
@@ -113,19 +155,8 @@ Public Class VentanaVotacion
 
     End Sub
 
-    Private Sub dtgVotarConsejal_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarConsejal.SelectionChanged
-        Dim fila As DataRowView = sender.SelectedItem
-        Dim id As Integer = fila("Id")
-        dtgVotarConsejal.IsEnabled = False
-        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
-        UpdateCandidato()
-    End Sub
-
-    Private Sub dtgVotarAsambleista_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgVotarAsambleista.SelectionChanged
-        Dim fila As DataRowView = sender.SelectedItem
-        Dim id As Integer = fila("Id")
-        dtgVotarAsambleista.IsEnabled = False
-        MsgBox("Usted ha votado por " & fila("Nombre") & " " & fila("Apellido"))
-        UpdateCandidato()
+    Private Sub Window_Closed(sender As Object, e As EventArgs)
+        Me.Owner.Owner.Show()
+        Me.Close()
     End Sub
 End Class
