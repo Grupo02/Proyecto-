@@ -5,12 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoWPF"
         mc:Ignorable="d"
-        Title="VentanaAnuncio" Height="250" Width="300" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Margin="4,0,-4,0">
-        <DockPanel Margin="-3,0,3,0">
-            <Label DockPanel.Dock="Top" HorizontalContentAlignment="Center" Foreground="#FF2E65C5">ELECCIONES 2017</Label>
-            <Label DockPanel.Dock="Bottom" HorizontalContentAlignment="Center" Foreground="#FF1F5ABF">ELECCIONES 2017</Label>
-            <MediaElement x:Name="src" HorizontalAlignment="Left" Height="162" Margin="32,5,0,0" VerticalAlignment="Top" Width="226" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"/>
+        Title="VentanaAnuncio" Height="250" Width="325" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="4,0,-6,0">
+        <DockPanel Margin="-3,0,9,0">
+            <Label DockPanel.Dock="Top" HorizontalContentAlignment="Center" Foreground="White" Background="#FF1F79E6">ELECCIONES</Label>
+            <Label DockPanel.Dock="left"  Foreground="#FF2E65C5" RenderTransformOrigin="0.5,0.5" Margin="0,78,0,79">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform> 2017
+            </Label>
+            <Label DockPanel.Dock="Right" HorizontalContentAlignment="Center" Foreground="#FF2E65C5" RenderTransformOrigin="0.5,0.5" Margin="0,77,0,78" Width="37">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.005"/>
+                        <RotateTransform Angle="89.717"/>
+                        <TranslateTransform Y="-0.009"/>
+                    </TransformGroup>
+                </Label.RenderTransform> 2017
+            </Label>
+            <Label DockPanel.Dock="Bottom" HorizontalContentAlignment="Center" Foreground="White" Background="#FF1F79E6" Margin="-36,0,-37,0">ELECCIONES</Label>
+
+            <MediaElement x:Name="src"  Height="167" Margin="10,0,0,0" VerticalAlignment="Top" Width="190" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg" RenderTransformOrigin="1.163,0.566"/>
         </DockPanel>
 
     </Grid>

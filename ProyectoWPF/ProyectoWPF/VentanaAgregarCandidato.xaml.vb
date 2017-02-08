@@ -7,6 +7,7 @@ Public Class VentanaAgregarCandidato
     Private strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
     Private dsCandidato As DataSet
+
     Private Sub cBoxDignidad_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cBoxDignidad.SelectionChanged
         cBoxDignidad.Items.Add("Presidente")
         cBoxDignidad.Items.Add("Asambleísta")
