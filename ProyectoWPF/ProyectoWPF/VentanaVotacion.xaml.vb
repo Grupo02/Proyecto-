@@ -86,8 +86,7 @@ Public Class VentanaVotacion
     Private Sub btn_Click(sender As Object, e As RoutedEventArgs)
         My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Me.btn_actual = sender
-        ' MsgBox(btn_actual.DataContext("nombre"))
-        MsgBox(btn_actual.DataContext("Dignidad"))
+        MsgBox("Usted ha votado por " & btn_actual.DataContext("Nombre"))
         Using conexion2 As New OleDbConnection(strConexion)
             Dim consulta2 As String = "Select * FROM Candidato;"
             Dim adapter2 As New OleDbDataAdapter(New OleDbCommand(consulta2, conexion2))
