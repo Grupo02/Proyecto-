@@ -33,13 +33,17 @@ Public Class VentanaResultadoCandidato
 
             adapter2.Fill(dsPersonas2, "Candidato")
         End Using
+
         Dim suma As Integer = 0
+
         Dim index = Variable
         For Each dig2 As DataRow In dsPersonas2.Tables("Candidato").Rows
             If index = dig2("dignidad") Then
+                'Sumo los votos
                 suma = suma + dig2("votos")
             End If
         Next
+
         Dim gridi As New StackPanel
         For Each dig2 As DataRow In dsPersonas2.Tables("Candidato").Rows
             If index = dig2("dignidad") Then
