@@ -45,7 +45,7 @@ Public Class VentanaResultadoCandidato
             If index = dig2("dignidad") Then
                 Dim porcentaje As Integer = CInt((dig2("votos") + 1) * 100 / suma)
                 Dim lbl As New Label
-                lbl.Content = dig2("nombre") & " " & dig2("apellido") & " : " & dig2("votos") & "%"
+                lbl.Content = dig2("nombre") & " " & dig2("apellido") & " : " & porcentaje & "%"
                 lbl.Margin = New Thickness(0, 20, 0, 0)
                 gridi.Children.Add(lbl)
                 Dim barra As New ProgressBar

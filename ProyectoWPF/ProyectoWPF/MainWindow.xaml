@@ -8,10 +8,10 @@
         Title="Login" Height="500" Width="800" Icon="img/cne.jpg" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     
     <Grid>
-        <Expander Header="" Height="50" HorizontalAlignment="Left" Margin="378,347,0,0" Name="Expander1" VerticalAlignment="Top" Width="75" IsExpanded="False">
+        <Expander Header="" Height="50" HorizontalAlignment="Left" Margin="378,369,0,0" Name="Expander1" VerticalAlignment="Top" Width="75" IsExpanded="False">
             <Grid Height="119">
-                <Label Content="Elige bien" HorizontalAlignment="Left" Background="Yellow"
-                       ></Label>
+                <Label Content="Elige bien" HorizontalAlignment="Left" Background="Yellow" Margin="4,0,0,0"
+                       />
             </Grid>
         
         </Expander>

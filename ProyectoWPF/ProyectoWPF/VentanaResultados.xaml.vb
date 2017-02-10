@@ -4,7 +4,7 @@ Imports System.Data.OleDb
 Public Class VentanaResultados
     Private Sub Window_Closed(sender As Object, e As EventArgs)
         Me.Hide()
-        Me.Owner.Owner.Show()
+        Me.Owner.Show()
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
@@ -57,7 +57,7 @@ Public Class VentanaResultados
                     Dim porcentaje As Integer = CInt((dig2("votos") + 1) * 100 / suma)
                     'MsgBox((dig2("votos") + 1) * 100 / suma)
                     Dim lbl As New Label
-                    lbl.Content = dig2("nombre") & " " & dig2("apellido") & " : " & dig2("votos") & "%"
+                    lbl.Content = dig2("nombre") & " " & dig2("apellido") & " : " & porcentaje & "%"
                     lbl.Margin = New Thickness(0, 20, 0, 0)
                     grid.Children.Add(lbl)
                     Dim barra As New ProgressBar
