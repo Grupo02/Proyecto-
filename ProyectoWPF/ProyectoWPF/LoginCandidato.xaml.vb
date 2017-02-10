@@ -15,6 +15,7 @@ Public Class LoginCandidato
         End Using
     End Sub
     Private Sub btnIngresarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnIngresarCandidato.Click
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Dim dbConexion As New OleDbConnection(strConexion)
 
         dbConexion.Open()

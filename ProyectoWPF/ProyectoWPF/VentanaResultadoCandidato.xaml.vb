@@ -64,6 +64,7 @@ Public Class VentanaResultadoCandidato
     End Sub
 
     Private Sub btnCerrarSesionCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnCerrarSesionCandidato.Click
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Dim VentanaPrincipal As New MainWindow
         VentanaPrincipal.Show()
         Me.Close()

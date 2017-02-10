@@ -19,6 +19,7 @@ Public Class LoginVotante
     End Sub
 
     Private Sub btnIngresarVotante_Click(sender As Object, e As RoutedEventArgs) Handles btnIngresarVotante.Click
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Dim dbPath = "../../Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath

@@ -15,7 +15,7 @@ Public Class VentanaAgregarCandidato
     End Sub
 
     Private Sub btnGuardarCandidato_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardarCandidato.Click
-
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         If txtApellidosCandidato.Text = "" Or txtNombresCandidato.Text = "" Or txtCedulaCandidato.Text = "" Or txtListaCandidato.Text = "" Or txtUsuarioCandidato.Text = "" Or cBoxDignidad.Text = "" Then
             MsgBox("Llenar todo los campos")
         Else

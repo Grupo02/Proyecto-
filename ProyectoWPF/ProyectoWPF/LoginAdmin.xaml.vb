@@ -18,7 +18,7 @@ Public Class LoginAdmin
 
     End Sub
     Private Sub bntIngresarAdmin_Click(sender As Object, e As RoutedEventArgs) Handles bntIngresarAdmin.Click
-
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Dim dbPath = "../../Proyecto_Visual.mdb"
         Dim strConexion = "Provider=Microsoft.Jet.OLEDB.4.0; " &
             "Data Source=" & dbPath

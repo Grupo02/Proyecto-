@@ -243,6 +243,7 @@
   <ItemGroup>
     <Content Include="img\Incentivo al Voto Inclusivo.mp4" />
     <Content Include="img\Incentivo_al_Voto_Inclusivo.wmv" />
+    <None Include="Resources\Click.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

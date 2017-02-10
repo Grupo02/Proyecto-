@@ -7,6 +7,7 @@ Public Class VentanaAgregarDignidad
     Private dsDignidad As DataSet
 
     Private Sub btnGuardarDignidad_Click(sender As Object, e As RoutedEventArgs) Handles btnGuardarDignidad.Click
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Dim id = 0
         Try
             id = Me.DataContext.Id()

@@ -11,6 +11,7 @@ Public Class VentanaVotacion
             "Data Source=" & dbPath
 
     Private _cedula As Integer
+
     Public Property Cedula() As Integer
         Get
             Return _cedula
@@ -83,6 +84,7 @@ Public Class VentanaVotacion
         Next
     End Sub
     Private Sub btn_Click(sender As Object, e As RoutedEventArgs)
+        My.Computer.Audio.Play(My.Resources.Click, AudioPlayMode.Background)
         Me.btn_actual = sender
         ' MsgBox(btn_actual.DataContext("nombre"))
         MsgBox(btn_actual.DataContext("Dignidad"))
